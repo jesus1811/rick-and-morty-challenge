@@ -1,0 +1,8 @@
+@use "/src/scss/mixins" as *;
+@use "/src/scss/theme" as *;
+
+.container {
+  padding: 25px;
+  @include flexCenter;
+  background-color: $secundary;
+}
