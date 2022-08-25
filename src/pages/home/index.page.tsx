@@ -7,6 +7,7 @@ import { AppStore } from "@/redux/store";
 import { Character } from "@/models";
 import { CharacterCard } from "./components";
 import styles from "./home.module.scss";
+import charactersAdapter from "@/adapters/charactersAdapter";
 
 const Home = () => {
   const [loader, setLoader] = useState(true);
@@ -15,7 +16,7 @@ const Home = () => {
 
   const getCharacters = async () => {
     const results = await characterService.getRickAndMortyCharactersService(setLoader);
-    dispatch(readCharacters(results));
+    dispatch(readCharacters(charactersAdapter(results)));
   };
   useEffect(() => {
     getCharacters();
