@@ -2,7 +2,11 @@
 @use "/src/scss/theme" as *;
 
 .container {
-  padding: 25px;
+  padding: 10px;
   @include flexCenter;
+  flex-direction: column;
   background-color: $secundary;
+  border-radius: 4px;
+  flex: 220px;
+  min-height: 220px;
 }

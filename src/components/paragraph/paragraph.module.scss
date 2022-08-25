@@ -1,0 +1,16 @@
+@use "/src/scss/mixins" as *;
+@use "/src/scss/theme" as *;
+
+.text {
+  text-align: center;
+  color: $white;
+  &__small {
+    font-size: 16px;
+  }
+  &__medium {
+    font-size: 20px;
+  }
+  &__large {
+    font-size: 25px;
+  }
+}

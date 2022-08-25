@@ -1,0 +1,9 @@
+@use "/src/scss/mixins" as *;
+@use "/src/scss/theme" as *;
+
+.content {
+  @include content;
+  @include flexCenter;
+  flex-wrap: wrap;
+  gap: 20px;
+}

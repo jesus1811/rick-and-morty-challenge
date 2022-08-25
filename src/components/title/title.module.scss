@@ -1,0 +1,9 @@
+@use "/src/scss/mixins" as *;
+@use "/src/scss/theme" as *;
+
+.text {
+  text-align: center;
+  font-size: 48px;
+  color: $white;
+  margin: 5px 0;
+}

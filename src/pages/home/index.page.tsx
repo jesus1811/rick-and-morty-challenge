@@ -1,16 +1,37 @@
-import { Card, Layout } from "@/components";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Layout, Loading, Title } from "@/components";
+import { characterService } from "@/services";
+import { useSelector, useDispatch } from "react-redux";
+import { readCharacters } from "@/redux/slices/charactersSlice";
+import { AppStore } from "@/redux/store";
+import { Character } from "@/models";
+import { CharacterCard } from "./components";
+import styles from "./home.module.scss";
 
 const Home = () => {
+  const [loader, setLoader] = useState(true);
+  const dispatch = useDispatch();
+  const characters = useSelector((store: AppStore) => store.characters);
+
+  const getCharacters = async () => {
+    const results = await characterService.getRickAndMortyCharactersService(setLoader);
+    dispatch(readCharacters(results));
+  };
+  useEffect(() => {
+    getCharacters();
+  }, []);
   return (
     <Layout title="home" description="rick and morty challenge">
-      <h1>hola mundo</h1>
-      <Card>
-        <h1>hola mundo</h1>
-      </Card>
-      {/* <Card>
-        <h1>hola mundo</h1>
-      </Card> */}
+      <Title>Rick and Morty</Title>
+      <div className={styles.content}>
+        {loader ? (
+          <Loading />
+        ) : (
+          characters.map((character: Character, index: number) => (
+            <CharacterCard key={index} character={character} />
+          ))
+        )}
+      </div>
     </Layout>
   );
 };

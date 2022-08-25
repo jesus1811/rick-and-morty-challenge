@@ -1,28 +1,7 @@
 import { Character } from "@/models";
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState: Character[] = [
-  {
-    id: null,
-    name: "",
-    status: "Alive",
-    species: "Human",
-    type: "",
-    gender: "",
-    origin: {
-      name: "",
-      url: "",
-    },
-    location: {
-      name: "",
-      url: "",
-    },
-    image: "",
-    episode: [""],
-    url: "",
-    created: "",
-  },
-];
+const initialState: Character[] = [];
 
 export const characterSlice = createSlice({
   name: "charactersSlice",
@@ -31,3 +10,5 @@ export const characterSlice = createSlice({
     readCharacters: (state, action) => action.payload,
   },
 });
+
+export const { readCharacters } = characterSlice.actions;
