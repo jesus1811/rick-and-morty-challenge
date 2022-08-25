@@ -15,7 +15,7 @@ const Home = () => {
   const characters = useSelector((store: AppStore) => store.characters);
 
   const getCharacters = async () => {
-    const results = await characterService.getRickAndMortyCharactersService(setLoader);
+    const results = await characterService.getCharactersService(setLoader);
     dispatch(readCharacters(charactersAdapter(results)));
   };
   useEffect(() => {

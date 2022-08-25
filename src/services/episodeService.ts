@@ -1,7 +1,7 @@
 import { Episode } from "@/models";
 import axios from "axios";
 
-const getRickAndMortyEpisodesService = async (setLoader: Function) => {
+const getEpisodesService = async (setLoader: Function) => {
   try {
     const response = await axios.get<{ results: Episode }>(
       `${process.env.NEXT_PUBLIC_BASE_URL}/espisode`
@@ -21,4 +21,4 @@ const getRickAndMortyEpisodesService = async (setLoader: Function) => {
 
 //delete
 
-export default { getRickAndMortyEpisodesService };
+export default { getEpisodesService };

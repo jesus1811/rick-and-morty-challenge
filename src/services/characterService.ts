@@ -1,7 +1,7 @@
 import { Character } from "@/models";
 import axios from "axios";
 
-const getRickAndMortyCharactersService = async (setLoader: Function) => {
+const getCharactersService = async (setLoader: Function) => {
   try {
     const response = await axios.get<{ results: Character }>(
       `${process.env.NEXT_PUBLIC_BASE_URL}/character/`
@@ -21,4 +21,4 @@ const getRickAndMortyCharactersService = async (setLoader: Function) => {
 
 //delete
 
-export default { getRickAndMortyCharactersService };
+export default { getCharactersService };
