@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import styles from "./layout.module.scss";
+import NavBar from "../nav-bar/NavBar";
 interface Prop {
   title: string;
   description: string;
@@ -15,7 +16,10 @@ const Layout = ({ title, description, children }: Prop) => {
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.container}>{children}</main>
+      <main className={styles.container}>
+        <NavBar />
+        {children}
+      </main>
     </>
   );
 };

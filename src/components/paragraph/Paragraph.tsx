@@ -3,7 +3,7 @@ import styles from "./paragraph.module.scss";
 
 interface Prop {
   variant: "text__small" | "text__medium" | "text__large";
-  children: string;
+  children: any;
 }
 
 const Paragraph = ({ variant, children }: Prop) => {

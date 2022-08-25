@@ -23,8 +23,8 @@ const Home = () => {
   }, []);
   return (
     <Layout title="home" description="rick and morty challenge">
-      <Title>Rick and Morty</Title>
-      <div className={styles.content}>
+      <Title>Characters</Title>
+      <div className={styles.cards}>
         {loader ? (
           <Loading />
         ) : (

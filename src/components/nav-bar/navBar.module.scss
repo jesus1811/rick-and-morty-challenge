@@ -1,0 +1,63 @@
+@use "/src/scss/mixins" as *;
+@use "/src/scss/theme" as *;
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $primary;
+  opacity: 90%;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+.content {
+  @include content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+}
+.menuIsToggle {
+  display: none;
+  @media screen and (max-width: 1024px) {
+    display: initial;
+  }
+}
+.checkBox {
+  display: none;
+  &:checked ~ .options {
+    padding: 20px 0;
+    height: initial;
+  }
+}
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  background: $primary;
+  transition: all ease-out 150ms;
+  @media screen and (max-width: 1024px) {
+    position: absolute;
+    right: 0;
+    top: 75px;
+    width: 100%;
+    max-width: 250px;
+    flex-direction: column;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+}
+.option {
+  text-align: center;
+  color: $white;
+  font-size: 18px;
+  cursor: pointer;
+  &:hover {
+    color: $secundary;
+  }
+}

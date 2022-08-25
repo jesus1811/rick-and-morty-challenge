@@ -10,8 +10,11 @@ interface Prop {
 const CharacterCard = ({ character }: Prop) => {
   return (
     <Card>
+      <Paragraph variant="text__small">
+        <span className={styles.id}>#{character.id} </span>
+        {character.name}
+      </Paragraph>
       <img className={styles.image} src={character.image} alt={character.name} />
-      <Paragraph variant="text__small">{character.name}</Paragraph>
     </Card>
   );
 };
