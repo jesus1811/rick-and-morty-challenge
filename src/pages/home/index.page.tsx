@@ -13,7 +13,7 @@ import { useCounterPage } from "./hooks";
 const Home = () => {
   const [loader, setLoader] = useState(true);
   const dispatch = useDispatch();
-  const characters = useSelector((store: AppStore) => store.characters);
+  const characters: Character[] = useSelector((store: AppStore) => store.characters);
   const { counterPage, handleCounter } = useCounterPage();
 
   const getCharacters = async () => {
@@ -41,7 +41,7 @@ const Home = () => {
         {loader ? (
           <Loading />
         ) : (
-          characters.map((character: Character, index: number) => (
+          characters.map((character, index: number) => (
             <CharacterCard key={index} character={character} />
           ))
         )}

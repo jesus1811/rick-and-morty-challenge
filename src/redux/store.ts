@@ -3,7 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { characterSlice } from "./slices/charactersSlice";
 
 export interface AppStore {
-  characters: any;
+  characters: Character[];
 }
 
 export const Store = configureStore<AppStore>({

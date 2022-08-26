@@ -1,8 +1,8 @@
 import { Character } from "@/models";
 
-const charactersAdapter = (characters: any) => {
+const charactersAdapter = (characters: Character[]) => {
   return characters.map(
-    (character: Character) =>
+    (character) =>
       <Character>{
         created: character.created,
         episode: character.episode,
