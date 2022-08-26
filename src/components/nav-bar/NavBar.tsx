@@ -7,7 +7,7 @@ const NavBar = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <Paragraph size="large" variant="white">
-          Rick and Morty App
+          Rickvana
         </Paragraph>
         <input className={styles.checkBox} type="checkbox" id="checkbox" />
         <label className={styles.menuIsToggle} htmlFor="checkbox">

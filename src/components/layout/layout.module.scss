@@ -5,6 +5,7 @@
   background-color: $primary;
   @include flexCenter;
   flex-direction: column;
+  justify-content: flex-start;
   width: 100%;
   min-height: 100vh;
   padding-bottom: 30px;
