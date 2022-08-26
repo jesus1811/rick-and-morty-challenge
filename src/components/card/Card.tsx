@@ -5,7 +5,7 @@ interface Prop {
 }
 
 const Card = ({ children }: Prop) => {
-  return <article className={styles.container}>{children}</article>;
+  return <article className={`${styles.container}`}>{children}</article>;
 };
 
 export default Card;

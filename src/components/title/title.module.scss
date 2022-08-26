@@ -4,6 +4,14 @@
 .text {
   text-align: center;
   font-size: 48px;
-  color: $gold;
   margin: 5px 0;
+  &__primary {
+    color: $gold;
+  }
+  &__secundary {
+    color: $primary;
+  }
+  &__white {
+    color: $white;
+  }
 }

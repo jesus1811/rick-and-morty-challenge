@@ -1,0 +1,28 @@
+@use "/src/scss/mixins" as *;
+@use "/src/scss/theme" as *;
+
+.button {
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  &__primary {
+    background-color: $gold;
+    color: $primary;
+    border: solid 1px $gold;
+  }
+  &__secundary {
+    background-color: $primary;
+    color: $white;
+    border: solid 1px $primary;
+  }
+  &__outline {
+    background-color: transparent;
+    color: $gold;
+    border: solid 1px $gold;
+    transition: all ease-in .3s ;
+    &:hover {
+      background-color: $gold;
+      color: $primary;
+    }
+  }
+}

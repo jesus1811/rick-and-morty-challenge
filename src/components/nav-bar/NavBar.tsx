@@ -6,7 +6,9 @@ const NavBar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <Paragraph variant="text__large">Rick and Morty challenge</Paragraph>
+        <Paragraph size="large" variant="white">
+          Rick and Morty App
+        </Paragraph>
         <input className={styles.checkBox} type="checkbox" id="checkbox" />
         <label className={styles.menuIsToggle} htmlFor="checkbox">
           <img className={styles.menuImage} src="/menu.svg" alt="" />

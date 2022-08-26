@@ -3,7 +3,6 @@
 
 .text {
   text-align: center;
-  color: $white;
   &__small {
     font-size: 15px;
   }
@@ -12,5 +11,14 @@
   }
   &__large {
     font-size: 25px;
+  }
+  &__primary {
+    color: $gold;
+  }
+  &__secundary {
+    color: $primary;
+  }
+  &__white {
+    color: $white;
   }
 }
