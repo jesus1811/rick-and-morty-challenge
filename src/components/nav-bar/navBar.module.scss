@@ -20,6 +20,12 @@
   align-items: center;
   padding: 10px 25px;
 }
+.title {
+  text-align: center;
+  font-size: 25px;
+  color: $gold;
+  cursor: pointer;
+}
 .menuIsToggle {
   display: none;
   @media screen and (max-width: 1024px) {

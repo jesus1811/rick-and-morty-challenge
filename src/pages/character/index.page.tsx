@@ -24,7 +24,7 @@ const Character = () => {
     getCharacters();
   }, [counterPage]);
   return (
-    <Layout title="rickvana | character" description="plataforma para ver e informarse de rick and morty">
+    <Layout title="Rickvana | Character" description="plataforma para ver e informarse de rick and morty">
       <Title variant="primary">Characters</Title>
       <div className={styles.buttons}>
         <Paragraph size="large" variant="white">

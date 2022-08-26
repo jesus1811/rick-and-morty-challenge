@@ -1,21 +1,26 @@
+import Link from "next/link";
 import React from "react";
-import Paragraph from "../paragraph/Paragraph";
 import styles from "./navBar.module.scss";
 
 const NavBar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <Paragraph size="large" variant="primary">
-          Rickvana
-        </Paragraph>
+        <Link href="/home">
+          <h1 className={styles.title}>Rickvana</h1>
+        </Link>
+
         <input className={styles.checkBox} type="checkbox" id="checkbox" />
         <label className={styles.menuIsToggle} htmlFor="checkbox">
           <img className={styles.menuImage} src="/menu.svg" alt="" />
         </label>
         <div className={styles.options}>
-          <h1 className={styles.option}>Characters</h1>
-          <h1 className={styles.option}>Episodes</h1>
+          <Link href="/character">
+            <h1 className={styles.option}>Characters</h1>
+          </Link>
+          <Link href="/location">
+            <h1 className={styles.option}>Location</h1>
+          </Link>
         </div>
       </div>
     </div>
