@@ -1,12 +1,23 @@
 @use "/src/scss/mixins" as *;
 @use "/src/scss/theme" as *;
 
-.content {
+.container {
   width: 100%;
   background-color: $gold;
-  background-image: url("/banner.jfif");
+  background-image: url("/banner.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: calc(100vh - 57.5px);
   @include flexCenter;
+  flex-direction: column;
+}
+.content {
+  @include flexCenter;
+  opacity: 70%;
+  padding: 20px;
+  background-color: $secundary;
+  flex-direction: column;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 3px;
 }
