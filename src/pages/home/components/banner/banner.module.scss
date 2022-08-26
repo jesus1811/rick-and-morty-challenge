@@ -1,0 +1,12 @@
+@use "/src/scss/mixins" as *;
+@use "/src/scss/theme" as *;
+
+.content {
+  width: 100%;
+  background-color: $gold;
+  background-image: url("/banner.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: calc(100vh - 57.5px);
+  @include flexCenter;
+}

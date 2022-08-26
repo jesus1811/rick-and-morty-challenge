@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <Paragraph size="large" variant="white">
+        <Paragraph size="large" variant="primary">
           Rickvana
         </Paragraph>
         <input className={styles.checkBox} type="checkbox" id="checkbox" />
