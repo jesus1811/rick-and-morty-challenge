@@ -22,7 +22,7 @@ const Home = () => {
     getEpisodes();
   }, []);
   return (
-    <Layout title="Rickvana | Home" description="tu plataforma de peliculas favorita">
+    <Layout title="Rickvana | Home" description="Plataforma de rick and morty para ver la serie e informarse">
       <Banner />
       <Title variant="primary">Episodes</Title>
       <div className={styles.buttons}>

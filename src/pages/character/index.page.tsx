@@ -26,7 +26,7 @@ const Character = () => {
   return (
     <Layout
       title="Rickvana | Character"
-      description="plataforma para ver e informarse de rick and morty"
+      description="Plataforma de rick and morty para ver la serie e informarse"
     >
       <Title variant="primary">Characters</Title>
       <div className={styles.buttons}>
