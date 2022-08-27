@@ -19,10 +19,16 @@
     background-color: transparent;
     color: $gold;
     border: solid 1px $gold;
-    transition: all ease-in .3s ;
+    transition: all ease-in 0.3s;
     &:hover {
       background-color: $gold;
       color: $primary;
     }
+  }
+  &__disable {
+    background-color: $backgroundDisable;
+    color: $colorDisable;
+    border: solid 1px $backgroundDisable;
+    cursor: initial;
   }
 }

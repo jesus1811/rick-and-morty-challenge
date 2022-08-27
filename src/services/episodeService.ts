@@ -7,6 +7,7 @@ const getEpisodesService = async (setLoader: Function) => {
       `${process.env.NEXT_PUBLIC_BASE_URL}/episode`
     );
     if (response.status === 200) return response.data.results;
+    return []
   } catch (err) {
     console.log(err);
     return [];

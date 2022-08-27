@@ -4,7 +4,7 @@ import styles from "./button.module.scss";
 interface Prop {
   children: string;
   onClick: () => void;
-  variant: "primary" | "outline" | "secundary";
+  variant: "primary" | "outline" | "secundary" | "disable";
 }
 
 const Button = ({ children, onClick, variant }: Prop) => {

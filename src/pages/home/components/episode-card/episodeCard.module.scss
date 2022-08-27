@@ -1,0 +1,8 @@
+@use "/src/scss/mixins" as *;
+@use "/src/scss/theme" as *;
+
+.id {
+    font-weight: 500;
+    color: $gold;
+  }
+  
