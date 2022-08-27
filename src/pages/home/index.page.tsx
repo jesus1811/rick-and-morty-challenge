@@ -7,9 +7,9 @@ import styles from "./home.module.scss";
 import { readEpisodes } from "@/redux/slices/episodesSlice";
 import { AppStore } from "@/redux/store";
 
-const index = () => {
-  const dispatch = useDispatch();
+const Home = () => {
   const [loader, setLoader] = useState(true);
+  const dispatch = useDispatch();
   const episodes = useSelector((store: AppStore) => store.episodes);
   const [season, setSeason] = useState(1);
 
@@ -65,4 +65,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Home;

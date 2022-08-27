@@ -19,7 +19,10 @@ const NavBar = () => {
             <h1 className={styles.option}>Characters</h1>
           </Link>
           <Link href="/location">
-            <h1 className={styles.option}>Location</h1>
+            <h1 className={styles.option}>Locations</h1>
+          </Link>
+          <Link href="/location">
+            <h1 className={styles.option}>Episodes</h1>
           </Link>
         </div>
       </div>
