@@ -35,18 +35,21 @@ const Home = () => {
           Season 2
         </Button>
         <Button variant="disable" onClick={() => {}}>
-          Season 3 proximamente
+          Season 3
         </Button>
       </div>
-      <div className={styles.cards}>
-        {loader ? (
-          <Loading />
-        ) : (
-          episodes
+      {loader ? (
+        <Loading />
+      ) : (
+        <div className={styles.cards}>
+          {episodes
             .filter((episode) => episode.episode.slice(1, 3) === `0${season}`)
-            .map((episode) => <EpisodeCard key={episode.id} episode={episode} />)
-        )}
-      </div>
+            .map((episode) => (
+              <EpisodeCard key={episode.id} episode={episode} />
+            ))}
+        </div>
+      )}
+
       <div className={styles.buttons}>
         <Paragraph size="large" variant="white">
           Season {season}
@@ -58,7 +61,7 @@ const Home = () => {
           Season 2
         </Button>
         <Button variant="disable" onClick={() => {}}>
-          Season 3 proximamente
+          Season 3
         </Button>
       </div>
     </Layout>

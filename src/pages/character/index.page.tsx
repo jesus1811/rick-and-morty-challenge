@@ -24,7 +24,10 @@ const Character = () => {
     getCharacters();
   }, [counterPage]);
   return (
-    <Layout title="Rickvana | Character" description="plataforma para ver e informarse de rick and morty">
+    <Layout
+      title="Rickvana | Character"
+      description="plataforma para ver e informarse de rick and morty"
+    >
       <Title variant="primary">Characters</Title>
       <div className={styles.buttons}>
         <Paragraph size="large" variant="white">
@@ -37,15 +40,16 @@ const Character = () => {
           Next
         </Button>
       </div>
-      <div className={styles.cards}>
-        {loader ? (
-          <Loading />
-        ) : (
-          characters.map((character, index: number) => (
+      {loader ? (
+        <Loading />
+      ) : (
+        <div className={styles.cards}>
+          {characters.map((character, index: number) => (
             <CharacterCard key={index} character={character} />
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
+
       <div className={styles.buttons}>
         <Paragraph size="large" variant="white">
           #Page {counterPage}
