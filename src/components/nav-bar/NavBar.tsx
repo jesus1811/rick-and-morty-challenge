@@ -21,7 +21,7 @@ const NavBar = () => {
           <Link href="/location">
             <h1 className={styles.option}>Locations</h1>
           </Link>
-          <Link href="/location">
+          <Link href="/home">
             <h1 className={styles.option}>Episodes</h1>
           </Link>
         </div>

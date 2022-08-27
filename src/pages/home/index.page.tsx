@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import styles from "./home.module.scss";
 import { readEpisodes } from "@/redux/slices/episodesSlice";
 import { AppStore } from "@/redux/store";
+import { episodesAdapter } from "@/adapters";
 
 const Home = () => {
   const [loader, setLoader] = useState(true);
@@ -15,7 +16,7 @@ const Home = () => {
 
   const getEpisodes = async () => {
     const results = await episodeService.getEpisodesService(setLoader);
-    dispatch(readEpisodes(results));
+    dispatch(readEpisodes(episodesAdapter(results)));
   };
   useEffect(() => {
     getEpisodes();
