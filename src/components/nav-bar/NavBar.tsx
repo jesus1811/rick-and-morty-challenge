@@ -15,14 +15,14 @@ const NavBar = () => {
           <img className={styles.menuImage} src="/menu.svg" alt="" />
         </label>
         <div className={styles.options}>
+        <Link href="/home">
+            <h1 className={styles.option}>Episodes</h1>
+          </Link>
           <Link href="/character">
             <h1 className={styles.option}>Characters</h1>
           </Link>
           <Link href="/location">
             <h1 className={styles.option}>Locations</h1>
-          </Link>
-          <Link href="/home">
-            <h1 className={styles.option}>Episodes</h1>
           </Link>
         </div>
       </div>

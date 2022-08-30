@@ -1,0 +1,19 @@
+@use "/src/scss/mixins" as *;
+@use "/src/scss/theme" as *;
+
+.image {
+  width: 100%;
+  border-radius: 4px;
+}
+.informations {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.information {
+  font-size: 16px;
+  color: $white;
+}

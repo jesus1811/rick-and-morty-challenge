@@ -1,8 +1,6 @@
 import { Character, Episode } from "@/models";
 import { configureStore } from "@reduxjs/toolkit";
-import { characterSlice } from "./slices/charactersSlice";
-import { episodesSlice } from "./slices/episodesSlice";
-
+import { charactersSlice, episodesSlice } from "./slices";
 export interface AppStore {
   characters: Character[];
   episodes: Episode[];
@@ -10,7 +8,7 @@ export interface AppStore {
 
 export const Store = configureStore<AppStore>({
   reducer: {
-    characters: characterSlice.reducer,
+    characters: charactersSlice.reducer,
     episodes: episodesSlice.reducer,
   },
 });

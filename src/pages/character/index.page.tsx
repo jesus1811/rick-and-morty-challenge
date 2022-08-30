@@ -45,7 +45,7 @@ const Character = () => {
       ) : (
         <div className={styles.cards}>
           {characters.map((character, index: number) => (
-            <CharacterCard key={index} character={character} />
+            <CharacterCard key={index} character={character} page={counterPage} />
           ))}
         </div>
       )}

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./title.module.scss";
 
 interface Prop {
-  children: string;
+  children: any;
   variant: "primary" | "secundary" | "white";
 }
 

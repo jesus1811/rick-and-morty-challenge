@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState: Character[] = [];
 
-export const characterSlice = createSlice({
+export const charactersSlice = createSlice({
   name: "charactersSlice",
   initialState,
   reducers: {
@@ -11,4 +11,4 @@ export const characterSlice = createSlice({
   },
 });
 
-export const { readCharacters } = characterSlice.actions;
+export const { readCharacters } = charactersSlice.actions;
