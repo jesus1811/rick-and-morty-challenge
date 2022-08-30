@@ -30,7 +30,7 @@ const CharacterDetail = ({ character }: { character: Character }) => {
           </Paragraph>
           <Paragraph variant="primary" size="large">
             Origin
-            <span className={styles.information}> {character.origin.name}</span>
+            <span className={styles.information}>earth</span>
           </Paragraph>
           <Paragraph variant="primary" size="large">
             Type

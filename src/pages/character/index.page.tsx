@@ -33,10 +33,10 @@ const Character = () => {
         <Paragraph size="large" variant="white">
           #Page {counterPage}
         </Paragraph>
-        <Button variant="primary" onClick={() => handleCounter("back")}>
+        <Button variant="primary" onClick={() => handleCounter("back", setLoader)}>
           Back
         </Button>
-        <Button variant="primary" onClick={() => handleCounter("next")}>
+        <Button variant="primary" onClick={() => handleCounter("next", setLoader)}>
           Next
         </Button>
       </div>
@@ -49,15 +49,14 @@ const Character = () => {
           ))}
         </div>
       )}
-
       <div className={styles.buttons}>
         <Paragraph size="large" variant="white">
           #Page {counterPage}
         </Paragraph>
-        <Button variant="primary" onClick={() => handleCounter("back")}>
+        <Button variant="primary" onClick={() => handleCounter("back", setLoader)}>
           Back
         </Button>
-        <Button variant="primary" onClick={() => handleCounter("next")}>
+        <Button variant="primary" onClick={() => handleCounter("next", setLoader)}>
           Next
         </Button>
       </div>

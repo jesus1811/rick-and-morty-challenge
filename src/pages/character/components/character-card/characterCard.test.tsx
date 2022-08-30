@@ -25,7 +25,7 @@ describe("CharacterCard.tsx", () => {
       url: "https://rickandmortyapi.com/api/character/41",
       species: "Mythological Creature",
     };
-    const component = render(<CharacterCard character={character} />);
+    const component = render(<CharacterCard character={character} page={1} />);
     component.getByText("Big Boobed Waitress");
     component.getByText("#1");
   });
