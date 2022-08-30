@@ -18,7 +18,7 @@ const Character = () => {
 
   const getCharacters = async () => {
     const results = await characterService.getCharactersService(setLoader, counterPage);
-    dispatch(readCharacters(charactersAdapter(results)));
+    dispatch(readCharacters(results.map((result) => charactersAdapter(result))));
   };
   useEffect(() => {
     getCharacters();

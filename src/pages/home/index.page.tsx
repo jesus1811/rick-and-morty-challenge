@@ -16,13 +16,16 @@ const Home = () => {
 
   const getEpisodes = async () => {
     const results = await episodeService.getEpisodesService(setLoader);
-    dispatch(readEpisodes(episodesAdapter(results)));
+    dispatch(readEpisodes(results.map((result) => episodesAdapter(result)))); 
   };
   useEffect(() => {
     getEpisodes();
   }, []);
   return (
-    <Layout title="Rickvana | Home" description="Plataforma de rick and morty para ver la serie e informarse">
+    <Layout
+      title="Rickvana | Home"
+      description="Plataforma de rick and morty para ver la serie e informarse"
+    >
       <Banner />
       <Title variant="primary">Episodes</Title>
       <div className={styles.buttons}>

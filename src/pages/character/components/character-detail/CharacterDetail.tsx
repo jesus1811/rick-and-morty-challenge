@@ -7,7 +7,7 @@ const CharacterDetail = ({ character }: { character: Character }) => {
   return (
     <>
       <Card>
-        <img className={styles.image} src={character.image} alt={character.name} />
+        <img className={styles.image} src={character.image} alt={character.name} loading="lazy" />
       </Card>
       <Card>
         <Title variant="primary">{character.name}</Title>
