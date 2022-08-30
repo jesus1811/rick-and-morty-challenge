@@ -18,7 +18,7 @@ const CharacterDetail = ({ character }: { character: Character }) => {
           </Paragraph>
           <Paragraph variant="primary" size="large">
             Create
-            <span className={styles.information}> {character.created}</span>
+            <span className={styles.information}> {character.created.slice(0, 10)}</span>
           </Paragraph>
           <Paragraph variant="primary" size="large">
             Specie

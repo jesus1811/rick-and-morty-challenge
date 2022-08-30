@@ -19,7 +19,7 @@ const Detail = () => {
       setLoader,
       Number(router.query.page)
     );
-    dispatch(readCharacters(charactersAdapter(results)));
+    dispatch(readCharacters(results.map((result) => charactersAdapter(result))));
   };
   useEffect(() => {
     getCharacters();
