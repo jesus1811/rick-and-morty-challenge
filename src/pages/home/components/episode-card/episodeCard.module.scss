@@ -1,8 +1,14 @@
 @use "/src/scss/mixins" as *;
 @use "/src/scss/theme" as *;
 
-.id {
-    font-weight: 500;
-    color: $gold;
-  }
-  
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $primary;
+  padding: 20px;
+}
+.video {
+  aspect-ratio: 16/9;
+}
