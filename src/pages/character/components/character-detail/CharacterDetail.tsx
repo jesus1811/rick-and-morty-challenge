@@ -1,7 +1,7 @@
-import React from "react";
-import { Card, Paragraph, Title } from "@/components";
-import styles from "./characterDetail.module.scss";
-import { Character } from "@/models";
+import React from 'react';
+import { Card, Paragraph, Title } from '@/components';
+import styles from './characterDetail.module.scss';
+import { Character } from '@/models';
 
 const CharacterDetail = ({ character }: { character: Character }) => {
   return (

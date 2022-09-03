@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { Layout, Loading, Title } from "@/components";
-import { useRouter } from "next/router";
-import styles from "./character.module.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { AppStore } from "@/redux/store";
-import { characterService } from "@/services";
-import { readCharacters } from "@/redux/slices";
-import { CharacterDetail } from "./components";
-import { charactersAdapter } from "@/adapters";
+import React, { useEffect, useState } from 'react';
+import { Layout, Loading, Title } from '@/components';
+import { useRouter } from 'next/router';
+import styles from './character.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppStore } from '@/redux/store';
+import { characterService } from '@/services';
+import { readCharacters } from '@/redux/slices';
+import { CharacterDetail } from './components';
+import { charactersAdapter } from '@/adapters';
 
 const Detail = () => {
   const router = useRouter();

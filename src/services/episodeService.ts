@@ -1,5 +1,5 @@
-import { Episode } from "@/models";
-import axios from "axios";
+import { Episode } from '@/models';
+import axios from 'axios';
 
 const getEpisodesService = async (setLoader: Function) => {
   try {
@@ -7,7 +7,7 @@ const getEpisodesService = async (setLoader: Function) => {
       `${process.env.NEXT_PUBLIC_BASE_URL}/episode`
     );
     if (response.status === 200) return response.data.results;
-    return []
+    return [];
   } catch (err) {
     console.log(err);
     return [];

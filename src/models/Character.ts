@@ -3,7 +3,7 @@ export interface Location {
   url: string;
 }
 
-export  interface Character {
+export interface Character {
   created: string;
   episode: string[];
   gender: string;

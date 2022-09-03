@@ -1,6 +1,6 @@
-import { Character, Episode } from "@/models";
-import { configureStore } from "@reduxjs/toolkit";
-import { charactersSlice, episodesSlice } from "./slices";
+import { Character, Episode } from '@/models';
+import { configureStore } from '@reduxjs/toolkit';
+import { charactersSlice, episodesSlice } from './slices';
 export interface AppStore {
   characters: Character[];
   episodes: Episode[];

@@ -1,4 +1,4 @@
-import { Episode } from "@/models";
+import { Episode } from '@/models';
 
 const episodesAdapter = (episode: Episode) => ({
   id: episode.id,

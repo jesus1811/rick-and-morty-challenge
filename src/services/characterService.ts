@@ -1,5 +1,5 @@
-import { Character } from "@/models";
-import axios from "axios";
+import { Character } from '@/models';
+import axios from 'axios';
 
 const getCharactersService = async (setLoader: Function, page: number) => {
   try {

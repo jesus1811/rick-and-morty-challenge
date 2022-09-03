@@ -1,4 +1,4 @@
-import { Character } from "@/models";
+import { Character } from '@/models';
 
 const charactersAdapter = (character: Character) => ({
   created: character.created,

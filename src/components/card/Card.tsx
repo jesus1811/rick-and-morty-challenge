@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./card.module.scss";
+import React from 'react';
+import styles from './card.module.scss';
 interface Prop {
   children: JSX.Element | JSX.Element[];
 }

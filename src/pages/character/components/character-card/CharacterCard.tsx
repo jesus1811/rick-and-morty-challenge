@@ -1,8 +1,8 @@
-import React from "react";
-import { Button, Card, Paragraph } from "@/components";
-import { Character } from "@/models";
-import styles from "./characterCard.module.scss";
-import { useRouter } from "next/router";
+import React from 'react';
+import { Button, Card, Paragraph } from '@/components';
+import { Character } from '@/models';
+import styles from './characterCard.module.scss';
+import { useRouter } from 'next/router';
 
 interface Prop {
   character: Character;

@@ -1,10 +1,10 @@
-import { Character } from "@/models";
-import { createSlice } from "@reduxjs/toolkit";
+import { Character } from '@/models';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState: Character[] = [];
 
 export const charactersSlice = createSlice({
-  name: "charactersSlice",
+  name: 'charactersSlice',
   initialState,
   reducers: {
     readCharacters: (state, action) => action.payload,

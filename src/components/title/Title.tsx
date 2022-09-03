@@ -1,9 +1,9 @@
-import React from "react";
-import styles from "./title.module.scss";
+import React from 'react';
+import styles from './title.module.scss';
 
 interface Prop {
   children: any;
-  variant: "primary" | "secundary" | "white";
+  variant: 'primary' | 'secundary' | 'white';
 }
 
 const Title = ({ children, variant }: Prop) => {

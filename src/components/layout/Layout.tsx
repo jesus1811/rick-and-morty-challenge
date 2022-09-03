@@ -1,7 +1,7 @@
-import React from "react";
-import Head from "next/head";
-import styles from "./layout.module.scss";
-import NavBar from "../nav-bar/NavBar";
+import React from 'react';
+import Head from 'next/head';
+import styles from './layout.module.scss';
+import NavBar from '../nav-bar/NavBar';
 interface Prop {
   title: string;
   description: string;

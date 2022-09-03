@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { Button, Layout, Loading, Paragraph, Title } from "@/components";
-import { characterService } from "@/services";
-import { useSelector, useDispatch } from "react-redux";
-import { readCharacters } from "@/redux/slices/charactersSlice";
-import { AppStore } from "@/redux/store";
-import { Character } from "@/models";
-import { CharacterCard } from "./components";
-import styles from "./character.module.scss";
-import charactersAdapter from "@/adapters/charactersAdapter";
-import { useCounterPage } from "@/hooks";
+import React, { useState, useEffect } from 'react';
+import { Button, Layout, Loading, Paragraph, Title } from '@/components';
+import { characterService } from '@/services';
+import { useSelector, useDispatch } from 'react-redux';
+import { readCharacters } from '@/redux/slices/charactersSlice';
+import { AppStore } from '@/redux/store';
+import { Character } from '@/models';
+import { CharacterCard } from './components';
+import styles from './character.module.scss';
+import charactersAdapter from '@/adapters/charactersAdapter';
+import { useCounterPage } from '@/hooks';
 
 const Character = () => {
   const [loader, setLoader] = useState(true);
@@ -33,10 +33,10 @@ const Character = () => {
         <Paragraph size="large" variant="white">
           #Page {counterPage}
         </Paragraph>
-        <Button variant="primary" onClick={() => handleCounter("back", setLoader)}>
+        <Button variant="primary" onClick={() => handleCounter('back', setLoader)}>
           Back
         </Button>
-        <Button variant="primary" onClick={() => handleCounter("next", setLoader)}>
+        <Button variant="primary" onClick={() => handleCounter('next', setLoader)}>
           Next
         </Button>
       </div>
@@ -53,10 +53,10 @@ const Character = () => {
         <Paragraph size="large" variant="white">
           #Page {counterPage}
         </Paragraph>
-        <Button variant="primary" onClick={() => handleCounter("back", setLoader)}>
+        <Button variant="primary" onClick={() => handleCounter('back', setLoader)}>
           Back
         </Button>
-        <Button variant="primary" onClick={() => handleCounter("next", setLoader)}>
+        <Button variant="primary" onClick={() => handleCounter('next', setLoader)}>
           Next
         </Button>
       </div>

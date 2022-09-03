@@ -1,10 +1,10 @@
-import React from "react";
-import styles from "./button.module.scss";
+import React from 'react';
+import styles from './button.module.scss';
 
 interface Prop {
   children: string;
   onClick: () => void;
-  variant: "primary" | "outline" | "secundary" | "disable";
+  variant: 'primary' | 'outline' | 'secundary' | 'disable';
 }
 
 const Button = ({ children, onClick, variant }: Prop) => {
