@@ -15,7 +15,7 @@ const EpisodeCard = ({ episode }: Prop) => {
     <>
       <Card>
         <Paragraph variant="primary" size="small">
-          Episode: {episode.episode.slice(4)}
+          Episode: {episode.episode.slice(4, 6)}
         </Paragraph>
         <Paragraph size="small" variant="white">
           {episode.name}
@@ -31,7 +31,7 @@ const EpisodeCard = ({ episode }: Prop) => {
             className={styles.video}
             autoPlay
             controls
-            src={getURLVideoFirebase(`01x${episode.episode.slice(4)}.mkv`)}
+            src={getURLVideoFirebase(`${episode.episode.slice(1, 3)}x${episode.episode.slice(4)}.mkv`)}
           />
         </div>
       </Modal>

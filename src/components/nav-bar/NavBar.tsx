@@ -12,7 +12,7 @@ const NavBar = () => {
 
         <input className={styles.checkBox} type="checkbox" id="checkbox" />
         <label className={styles.menuIsToggle} htmlFor="checkbox">
-          <img className={styles.menuImage} src="/menu.svg" alt="" />
+          <img className={styles.menuImage} src="/menu.svg" alt="menu" />
         </label>
         <div className={styles.options}>
         <Link href="/home">
