@@ -1,4 +1,3 @@
-import { useCounterPage } from '@/hooks';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
 import Buttons from './Buttons';
