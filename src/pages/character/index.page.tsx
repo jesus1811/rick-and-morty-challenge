@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Layout, Loading, Paragraph, Title } from '@/components';
+import { Layout, Loading, Title } from '@/components';
 import { characterService } from '@/services';
 import { useSelector, useDispatch } from 'react-redux';
 import { readCharacters } from '@/redux/slices/charactersSlice';
 import { AppStore } from '@/redux/store';
 import { Character } from '@/models';
-import { CharacterCard } from './components';
-import styles from './character.module.scss';
-import charactersAdapter from '@/adapters/charactersAdapter';
+import { Buttons, CharacterCard } from './components';
 import { useCounterPage } from '@/hooks';
+import { charactersAdapter } from '@/adapters';
+import styles from './character.module.scss';
 
 const Character = () => {
   const [loader, setLoader] = useState(true);
@@ -25,41 +25,21 @@ const Character = () => {
   }, [counterPage]);
   return (
     <Layout
-      title="Rickvana | Character"
+      title="Rickvana | Characters"
       description="Plataforma de rick and morty para ver la serie e informarse"
     >
       <Title variant="primary">Characters</Title>
-      <div className={styles.buttons}>
-        <Paragraph size="large" variant="white">
-          #Page {counterPage}
-        </Paragraph>
-        <Button variant="primary" onClick={() => handleCounter('back', setLoader)}>
-          Back
-        </Button>
-        <Button variant="primary" onClick={() => handleCounter('next', setLoader)}>
-          Next
-        </Button>
-      </div>
+      <Buttons counterPage={counterPage} handleCounter={handleCounter} />
       {loader ? (
         <Loading />
       ) : (
         <div className={styles.cards}>
-          {characters.map((character, index: number) => (
-            <CharacterCard key={index} character={character} page={counterPage} />
+          {characters.map((character) => (
+            <CharacterCard key={character.id} character={character} page={counterPage} />
           ))}
         </div>
       )}
-      <div className={styles.buttons}>
-        <Paragraph size="large" variant="white">
-          #Page {counterPage}
-        </Paragraph>
-        <Button variant="primary" onClick={() => handleCounter('back', setLoader)}>
-          Back
-        </Button>
-        <Button variant="primary" onClick={() => handleCounter('next', setLoader)}>
-          Next
-        </Button>
-      </div>
+      <Buttons counterPage={counterPage} handleCounter={handleCounter} />
     </Layout>
   );
 };
