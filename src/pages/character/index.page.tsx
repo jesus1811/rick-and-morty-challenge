@@ -11,13 +11,13 @@ import styles from './character.module.scss';
 import { charactersSlice } from '@/redux/slices';
 
 const Character = () => {
-  const [loader, setLoader] = useState(true);
+  const [isLoader, setIsLoader] = useState<boolean>(true);
   const dispatch = useDispatch();
   const characters: Character[] = useSelector((store: AppStore) => store.characters);
   const { counterPage, handleCounterNext, handleCounterPrev } = useCounterPage();
 
   const getCharacters = async () => {
-    const results = await characterService.getCharactersService(setLoader, counterPage);
+    const results = await characterService.getCharactersService(setIsLoader, counterPage);
     dispatch(charactersSlice.readCharacters(results.map((result) => charactersAdapter(result))));
   };
   useEffect(() => {
@@ -34,7 +34,7 @@ const Character = () => {
         handleCounterNext={handleCounterNext}
         handleCounterPrev={handleCounterPrev}
       />
-      {loader ? (
+      {isLoader ? (
         <Loading />
       ) : (
         <div className={styles.cards}>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const useCounterPage = () => {
-  const [counterPage, setCounterPage] = useState(1);
+  const [counterPage, setCounterPage] = useState<number>(1);
 
   const handleCounterPrev = () => {
     if (counterPage !== 1) setCounterPage(counterPage - 1);
