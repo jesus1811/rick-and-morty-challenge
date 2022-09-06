@@ -1,1 +1,1 @@
-export * from './getURLVideoFirebase.utility';
+export { default as getURLVideoFirebaseUtility } from './getURLVideoFirebaseUtility';
