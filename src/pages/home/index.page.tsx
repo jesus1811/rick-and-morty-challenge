@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Layout, Loading, Paragraph, Title } from '@/components';
+import { Layout, Loading, Title } from '@/components';
 import { episodeService } from '@/services';
 import { Banner, EpisodeCard, Pagination } from './components';
 import { useSelector, useDispatch } from 'react-redux';
@@ -13,7 +13,6 @@ const Home = () => {
   const [isLoader, setIsLoader] = useState<boolean>(true);
   const dispatch = useDispatch();
   const episodes = useSelector((store: AppStore) => store.episodes);
-  // const [season, setSeason] = useState<number>(1);
   const { counterSeason, handleCounterSeason } = useCounterSeason();
 
   const getEpisodes = async () => {
