@@ -19,6 +19,7 @@ const Home = () => {
     const results = await episodeService.getEpisodesService(setIsLoader);
     dispatch(episodesSlice.readEpisodes(results.map((result) => episodesAdapter(result))));
   };
+  const getCharacter = () => {};
   useEffect(() => {
     getEpisodes();
   }, []);

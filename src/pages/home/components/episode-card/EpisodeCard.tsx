@@ -26,7 +26,9 @@ const EpisodeCard = ({ episode }: Prop) => {
       </Card>
       <Modal open={isModal} onClose={() => setIsModal(false)}>
         <div className={styles.modal}>
-          <Title variant="primary">Episode: {episode.episode.slice(4)}</Title>
+          <Title variant="primary">
+            Episode {episode.episode.slice(4)} - {episode.name}
+          </Title>
           <video
             className={styles.video}
             autoPlay
@@ -35,6 +37,26 @@ const EpisodeCard = ({ episode }: Prop) => {
               `${episode.episode.slice(1, 3)}x${episode.episode.slice(4)}.mkv`
             )}
           />
+
+          <Paragraph size="large" variant="primary">
+            Characters:
+          </Paragraph>
+          <div className={styles.images}>
+            {episode.characters.map((character, index) => (
+              <img
+                key={index}
+                className={styles.image}
+                src={`https://rickandmortyapi.com/api/character/avatar/${character.slice(42)}.jpeg`}
+                alt=""
+              />
+            ))}
+          </div>
+          <Paragraph size="large" variant="primary">
+            Created:
+          </Paragraph>
+          <Paragraph size="small" variant="white">
+            {episode.created.slice(0, 10)} {episode.created.slice(11, 19)}
+          </Paragraph>
         </div>
       </Modal>
     </>

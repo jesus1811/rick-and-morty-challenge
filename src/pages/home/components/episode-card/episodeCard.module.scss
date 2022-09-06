@@ -1,5 +1,5 @@
-@use "/src/scss/mixins" as *;
-@use "/src/scss/theme" as *;
+@use '/src/scss/mixins' as *;
+@use '/src/scss/theme' as *;
 
 .modal {
   position: absolute;
@@ -9,7 +9,31 @@
   background-color: $primary;
   padding: 20px;
   border: none;
+  overflow-y: auto;
+  height: 90vh;
+}
+.modal::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+  background-color: $secundary;
+}
+.modal::-webkit-scrollbar-thumb {
+  background-color: $gold;
+  border-radius: 4px;
 }
 .video {
   aspect-ratio: 16/9;
+  width: 100%;
+  margin: 15px 0 15px 0;
+}
+.images {
+  @include flexCenter;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 15px 0 15px 0;
+}
+.image {
+  width: 45px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
 }

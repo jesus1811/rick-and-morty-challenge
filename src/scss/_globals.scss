@@ -1,3 +1,5 @@
+@use '/src/scss/theme' as *;
+
 *,
 ::before,
 ::after {
@@ -26,6 +28,15 @@ html {
 body {
   margin: 0;
   line-height: inherit;
+}
+body::-webkit-scrollbar {
+  width: 12px;
+  height: 8px;
+  background-color: $secundary;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $gold;
+  border-radius: 4px;
 }
 
 hr {
