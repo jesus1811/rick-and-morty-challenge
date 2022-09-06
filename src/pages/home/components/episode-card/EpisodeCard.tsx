@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Button, Card, Paragraph, Title } from "@/components";
-import { Episode } from "@/models";
-import { Modal } from "@mui/material";
-import styles from "./episodeCard.module.scss";
-import { getURLVideoFirebase } from "@/utilities";
+import React, { useState } from 'react';
+import { Button, Card, Paragraph, Title } from '@/components';
+import { Episode } from '@/models';
+import { Modal } from '@mui/material';
+import { getURLVideoFirebaseUtility } from '@/utilities';
+import styles from './episodeCard.module.scss';
 
 interface Prop {
   episode: Episode;
@@ -31,7 +31,9 @@ const EpisodeCard = ({ episode }: Prop) => {
             className={styles.video}
             autoPlay
             controls
-            src={getURLVideoFirebase(`${episode.episode.slice(1, 3)}x${episode.episode.slice(4)}.mkv`)}
+            src={getURLVideoFirebaseUtility(
+              `${episode.episode.slice(1, 3)}x${episode.episode.slice(4)}.mkv`
+            )}
           />
         </div>
       </Modal>

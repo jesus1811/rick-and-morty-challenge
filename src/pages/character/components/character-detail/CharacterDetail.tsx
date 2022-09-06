@@ -13,27 +13,27 @@ const CharacterDetail = ({ character }: { character: Character }) => {
         <Title variant="primary">{character.name}</Title>
         <div className={styles.informations}>
           <Paragraph variant="primary" size="large">
-            Gender
+            Gender:
             <span className={styles.information}> {character.gender}</span>
           </Paragraph>
           <Paragraph variant="primary" size="large">
-            Create
+            Create:
             <span className={styles.information}> {character.created.slice(0, 10)}</span>
           </Paragraph>
           <Paragraph variant="primary" size="large">
-            Specie
+            Specie:
             <span className={styles.information}> {character.species}</span>
           </Paragraph>
           <Paragraph variant="primary" size="large">
-            Location
+            Location:
             <span className={styles.information}> {character.location.name}</span>
           </Paragraph>
           <Paragraph variant="primary" size="large">
-            Origin
-            <span className={styles.information}>earth</span>
+            Origin:
+            <span className={styles.information}> earth</span>
           </Paragraph>
           <Paragraph variant="primary" size="large">
-            Type
+            Type:
             <span className={styles.information}> {character.type}</span>
           </Paragraph>
         </div>

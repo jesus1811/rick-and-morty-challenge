@@ -1,13 +1,13 @@
-@use "/src/scss/mixins" as *;
-@use "/src/scss/theme" as *;
+@use '/src/scss/mixins' as *;
+@use '/src/scss/theme' as *;
 
 .container {
   width: 100%;
   background-color: $gold;
-  background-image: url("/banner.jpg");
+  background-image: url('/banner.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: calc(100vh - 57.5px);
+  min-height: calc(110vh - 57.5px);
   @include flexCenter;
   flex-direction: column;
 }

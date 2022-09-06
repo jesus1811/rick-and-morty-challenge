@@ -7,12 +7,14 @@ import { AppStore } from '@/redux/store';
 import { episodesAdapter } from '@/adapters';
 import styles from './home.module.scss';
 import { episodesSlice } from '@/redux/slices';
+import { useCounterSeason } from './hooks';
 
 const Home = () => {
   const [isLoader, setIsLoader] = useState<boolean>(true);
   const dispatch = useDispatch();
   const episodes = useSelector((store: AppStore) => store.episodes);
-  const [season, setSeason] = useState<number>(1);
+  // const [season, setSeason] = useState<number>(1);
+  const { counterSeason, handleCounterSeason } = useCounterSeason();
 
   const getEpisodes = async () => {
     const results = await episodeService.getEpisodesService(setIsLoader);
@@ -28,19 +30,19 @@ const Home = () => {
     >
       <Banner />
       <Title variant="primary">Episodes</Title>
-      <Pagination season={season} setSeason={setSeason} />
+      <Pagination season={counterSeason} setSeason={handleCounterSeason} />
       {isLoader ? (
         <Loading />
       ) : (
         <div className={styles.cards}>
           {episodes
-            .filter((episode) => episode.episode.slice(1, 3) === `0${season}`)
+            .filter((episode) => episode.episode.slice(1, 3) === `0${counterSeason}`)
             .map((episode) => (
               <EpisodeCard key={episode.id} episode={episode} />
             ))}
         </div>
       )}
-      <Pagination season={season} setSeason={setSeason} />
+      <Pagination season={counterSeason} setSeason={handleCounterSeason} />
     </Layout>
   );
 };
