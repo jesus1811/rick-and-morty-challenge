@@ -1,9 +1,9 @@
-export interface Location {
+interface Location {
   name: string;
   url: string;
 }
 
-export interface Character {
+interface Character {
   created: string;
   episode: string[];
   gender: string;
@@ -17,3 +17,5 @@ export interface Character {
   type: string;
   url: string;
 }
+
+export default Character;

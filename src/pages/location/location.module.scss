@@ -1,0 +1,12 @@
+@use '/src/scss/mixins' as *;
+@use '/src/scss/theme' as *;
+
+.cards {
+  @include content;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 0 25px;
+}

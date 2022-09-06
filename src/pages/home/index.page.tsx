@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { Button, Layout, Loading, Paragraph, Title } from "@/components";
-import { episodeService } from "@/services";
-import { Banner, EpisodeCard } from "./components";
-import { useSelector, useDispatch } from "react-redux";
-import styles from "./home.module.scss";
-import { readEpisodes } from "@/redux/slices/episodesSlice";
-import { AppStore } from "@/redux/store";
-import { episodesAdapter } from "@/adapters";
+import React, { useEffect, useState } from 'react';
+import { Button, Layout, Loading, Paragraph, Title } from '@/components';
+import { episodeService } from '@/services';
+import { Banner, EpisodeCard } from './components';
+import { useSelector, useDispatch } from 'react-redux';
+import { AppStore } from '@/redux/store';
+import { episodesAdapter } from '@/adapters';
+import styles from './home.module.scss';
+import { episodesSlice } from '@/redux/slices';
 
 const Home = () => {
   const [loader, setLoader] = useState(true);
@@ -16,7 +16,7 @@ const Home = () => {
 
   const getEpisodes = async () => {
     const results = await episodeService.getEpisodesService(setLoader);
-    dispatch(readEpisodes(results.map((result) => episodesAdapter(result)))); 
+    dispatch(episodesSlice.readEpisodes(results.map((result) => episodesAdapter(result))));
   };
   useEffect(() => {
     getEpisodes();

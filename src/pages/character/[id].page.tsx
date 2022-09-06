@@ -5,9 +5,9 @@ import styles from './character.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppStore } from '@/redux/store';
 import { characterService } from '@/services';
-import { readCharacters } from '@/redux/slices';
 import { CharacterDetail } from './components';
 import { charactersAdapter } from '@/adapters';
+import { charactersSlice } from '@/redux/slices';
 
 const Detail = () => {
   const router = useRouter();
@@ -19,7 +19,7 @@ const Detail = () => {
       setLoader,
       Number(router.query.page)
     );
-    dispatch(readCharacters(results.map((result) => charactersAdapter(result))));
+    dispatch(charactersSlice.readCharacters(results.map((result) => charactersAdapter(result))));
   };
   useEffect(() => {
     getCharacters();
