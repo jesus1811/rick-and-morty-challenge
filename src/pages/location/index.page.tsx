@@ -2,24 +2,24 @@ import React, { useEffect, useState } from 'react';
 import { Layout, Loading, Pagination, Title } from '@/components';
 import { useCounterPage } from '@/hooks';
 import { LocationCard } from './components';
-import { locationService } from '@/services';
-import { useDispatch, useSelector } from 'react-redux';
-import { locationsSlice } from '@/redux/slices';
-import locationAdapter from '@/adapters/locationAdapter';
-import { Location } from '@/models';
-import { AppStore } from '@/redux/store';
 import styles from './location.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppStore } from '@/redux/store';
+import { Location } from '@/models';
+import { locationsSlice } from '@/redux/slices';
+import { locationService } from '@/services';
+import locationAdapter from '@/adapters/locationAdapter';
 
 const Locations = () => {
   const dispatch = useDispatch();
-  const { counterPage, handleCounterNext, handleCounterPrev } = useCounterPage();
   const locations: Location[] = useSelector((store: AppStore) => store.locations);
-  const [isLoader, setIsLoader] = useState(true);
-  const getLocations = async () => {
-    const results = await locationService.getLocationsService(setIsLoader, counterPage);
-    dispatch(locationsSlice.readLocations(results.map((result) => locationAdapter(result))));
-  };
+  const [isLoader, setIsLoader] = useState<boolean>(true);
+  const { counterPage, handleCounterNext, handleCounterPrev } = useCounterPage(setIsLoader);
   useEffect(() => {
+    const getLocations = async () => {
+      const results = await locationService.getLocationsService(setIsLoader, counterPage);
+      dispatch(locationsSlice.readLocations(results.map((result) => locationAdapter(result))));
+    };
     getLocations();
   }, [counterPage]);
   return (
@@ -28,13 +28,11 @@ const Locations = () => {
       description="Plataforma de rick and morty para ver la serie e informarse"
     >
       <Title variant="primary">Locations</Title>
-
       <Pagination
         counterPage={counterPage}
         handleCounterNext={handleCounterNext}
         handleCounterPrev={handleCounterPrev}
       />
-
       {isLoader ? (
         <Loading />
       ) : (
@@ -44,7 +42,6 @@ const Locations = () => {
           ))}
         </div>
       )}
-
       <Pagination
         counterPage={counterPage}
         handleCounterNext={handleCounterNext}

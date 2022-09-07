@@ -14,13 +14,11 @@ const Home = () => {
   const dispatch = useDispatch();
   const episodes = useSelector((store: AppStore) => store.episodes);
   const { counterSeason, handleCounterSeason } = useCounterSeason();
-
-  const getEpisodes = async () => {
-    const results = await episodeService.getEpisodesService(setIsLoader);
-    dispatch(episodesSlice.readEpisodes(results.map((result) => episodesAdapter(result))));
-  };
-  const getCharacter = () => {};
   useEffect(() => {
+    const getEpisodes = async () => {
+      const results = await episodeService.getEpisodesService(setIsLoader);
+      dispatch(episodesSlice.readEpisodes(results.map((result) => episodesAdapter(result))));
+    };
     getEpisodes();
   }, []);
   return (

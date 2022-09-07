@@ -2,7 +2,7 @@
 @use '/src/scss/theme' as *;
 
 .container {
-  background-color: $primary;
+  background-color: $secundary-200;
   @include flexCenter;
   flex-direction: column;
   justify-content: flex-start;

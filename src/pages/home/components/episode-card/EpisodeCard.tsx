@@ -10,7 +10,7 @@ interface Prop {
 }
 
 const EpisodeCard = ({ episode }: Prop) => {
-  const [isModal, setIsModal] = useState(false);
+  const [isModal, setIsModal] = useState<boolean>(false);
   return (
     <>
       <Card>

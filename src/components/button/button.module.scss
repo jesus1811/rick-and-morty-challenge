@@ -1,28 +1,33 @@
-@use "/src/scss/mixins" as *;
-@use "/src/scss/theme" as *;
+@use '/src/scss/mixins' as *;
+@use '/src/scss/theme' as *;
 
 .button {
   padding: 8px 20px;
   border-radius: 4px;
   font-weight: 500;
   &__primary {
-    background-color: $gold;
-    color: $primary;
-    border: solid 1px $gold;
+    background-color: $primary-100;
+    color: $secundary-200;
+    border: solid 1px $primary-100;
+    transition: all ease-in 0.3s;
+    &:hover {
+      background-color: $primary-200;
+    }
   }
   &__secundary {
-    background-color: $primary;
+    background-color: $secundary-200;
     color: $white;
-    border: solid 1px $primary;
+    border: solid 1px $secundary-200;
   }
   &__outline {
     background-color: transparent;
-    color: $gold;
-    border: solid 1px $gold;
+    color: $primary-100;
+    border: solid 1px $primary-100;
     transition: all ease-in 0.3s;
     &:hover {
-      background-color: $gold;
-      color: $primary;
+      background-color: $primary-200;
+      border: solid 1px $primary-200;
+      color: $secundary-200;
     }
   }
   &__disable {

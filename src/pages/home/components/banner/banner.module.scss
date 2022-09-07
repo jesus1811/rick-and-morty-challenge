@@ -3,7 +3,6 @@
 
 .container {
   width: 100%;
-  background-color: $gold;
   background-image: url('/banner.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,9 +12,9 @@
 }
 .content {
   @include flexCenter;
-  opacity: 70%;
+  opacity: 75%;
   padding: 20px;
-  background-color: $secundary;
+  background-color: $tertiary-100;
   flex-direction: column;
   width: 100%;
   max-width: 700px;

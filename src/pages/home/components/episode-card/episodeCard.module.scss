@@ -6,7 +6,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: $primary;
+  background-color: $secundary-200;
   padding: 20px;
   border: none;
   overflow-y: auto;
@@ -16,10 +16,10 @@
 .modal::-webkit-scrollbar {
   width: 12px;
   height: 8px;
-  background-color: $secundary;
+  background-color: $tertiary-100;
 }
 .modal::-webkit-scrollbar-thumb {
-  background-color: $gold;
+  background-color: $primary-100;
   border-radius: 4px;
 }
 .video {
@@ -32,6 +32,9 @@
   flex-wrap: wrap;
   gap: 20px;
   margin: 15px 0 15px 0;
+  :hover {
+    transform: scale(2);
+  }
 }
 .image {
   width: 45px;
@@ -44,6 +47,6 @@
   justify-content: flex-end;
 }
 .icon {
-  width: 60px;
+  width: 38px;
   cursor: pointer;
 }

@@ -32,10 +32,10 @@ body {
 body::-webkit-scrollbar {
   width: 12px;
   height: 8px;
-  background-color: $secundary;
+  background-color: $tertiary-100;
 }
 body::-webkit-scrollbar-thumb {
-  background-color: $gold;
+  background-color: $primary-100;
   border-radius: 4px;
 }
 
