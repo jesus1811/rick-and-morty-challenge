@@ -26,6 +26,14 @@ const EpisodeCard = ({ episode }: Prop) => {
       </Card>
       <Modal open={isModal} onClose={() => setIsModal(false)}>
         <div className={styles.modal}>
+          <span className={styles.icons}>
+            <img
+              className={styles.icon}
+              src="/close.svg"
+              alt="close"
+              onClick={() => setIsModal(false)}
+            />
+          </span>
           <Title variant="primary">
             Episode {episode.episode.slice(4)} - {episode.name}
           </Title>

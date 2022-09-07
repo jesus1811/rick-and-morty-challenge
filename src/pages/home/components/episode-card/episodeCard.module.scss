@@ -38,3 +38,12 @@
   aspect-ratio: 1/1;
   border-radius: 100%;
 }
+.icons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.icon {
+  width: 60px;
+  cursor: pointer;
+}
