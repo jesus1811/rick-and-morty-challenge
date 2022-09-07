@@ -11,6 +11,7 @@
   border: none;
   overflow-y: auto;
   height: 90vh;
+  @include content;
 }
 .modal::-webkit-scrollbar {
   width: 12px;
