@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './loading.module.scss';
 
-const Loading = () => {
+export const Loading = () => {
   return <span className={styles.loading}></span>;
 };
-
-export { Loading };

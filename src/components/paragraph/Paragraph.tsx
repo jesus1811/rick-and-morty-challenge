@@ -7,12 +7,10 @@ interface Prop {
   variant: 'primary' | 'secundary' | 'white';
 }
 
-const Paragraph = ({ variant, children, size }: Prop) => {
+export const Paragraph = ({ variant, children, size }: Prop) => {
   return (
     <p className={`${styles.text} ${styles[`text__${variant}`]} ${styles[`text__${size}`]}`}>
       {children}
     </p>
   );
 };
-
-export { Paragraph };

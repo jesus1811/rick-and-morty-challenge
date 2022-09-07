@@ -7,12 +7,10 @@ interface Prop {
   variant: 'primary' | 'outline' | 'secundary' | 'disable';
 }
 
-const Button = ({ children, onClick, variant }: Prop) => {
+export const Button = ({ children, onClick, variant }: Prop) => {
   return (
     <button className={`${styles.button} ${styles[`button__${variant}`]}`} onClick={onClick}>
       {children}
     </button>
   );
 };
-
-export { Button };

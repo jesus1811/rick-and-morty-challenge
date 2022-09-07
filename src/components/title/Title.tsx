@@ -6,8 +6,6 @@ interface Prop {
   variant: 'primary' | 'secundary' | 'white';
 }
 
-const Title = ({ children, variant }: Prop) => {
+export const Title = ({ children, variant }: Prop) => {
   return <h1 className={`${styles.text} ${styles[`text__${variant}`]}`}>{children}</h1>;
 };
-
-export { Title };

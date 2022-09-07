@@ -1,4 +1,4 @@
-interface Episode {
+export interface Episode {
   air_date: string;
   characters: string[];
   created: string;
@@ -7,4 +7,3 @@ interface Episode {
   name: string;
   url: string;
 }
-export default Episode;

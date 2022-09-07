@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const useCounterPage = (setLodader: Function) => {
+export const useCounterPage = (setLodader: Function) => {
   const [counterPage, setCounterPage] = useState<number>(1);
 
   const handleCounterPrev = () => {
@@ -19,5 +19,3 @@ const useCounterPage = (setLodader: Function) => {
     handleCounterPrev,
   };
 };
-
-export default useCounterPage;

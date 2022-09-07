@@ -1,4 +1,4 @@
-interface Location {
+export interface Location {
   created: string;
   dimension: string;
   id: number;
@@ -7,4 +7,3 @@ interface Location {
   type: string;
   url: string;
 }
-export default Location;

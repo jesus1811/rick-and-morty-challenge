@@ -8,7 +8,7 @@ interface Prop {
   children: JSX.Element | JSX.Element[];
 }
 
-const Layout = ({ title, description, children }: Prop) => {
+export const Layout = ({ title, description, children }: Prop) => {
   return (
     <>
       <Head>
@@ -23,5 +23,3 @@ const Layout = ({ title, description, children }: Prop) => {
     </>
   );
 };
-
-export { Layout };

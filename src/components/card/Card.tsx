@@ -4,8 +4,6 @@ interface Prop {
   children: ReactNode;
 }
 
-const Card = ({ children }: Prop) => {
+export const Card = ({ children }: Prop) => {
   return <article className={`${styles.container}`}>{children}</article>;
 };
-
-export { Card };

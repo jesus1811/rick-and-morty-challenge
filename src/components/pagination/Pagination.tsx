@@ -8,7 +8,7 @@ interface Prop {
   handleCounterPrev: () => void;
 }
 
-const Pagination = ({ counterPage, handleCounterNext, handleCounterPrev }: Prop) => {
+export const Pagination = ({ counterPage, handleCounterNext, handleCounterPrev }: Prop) => {
   return (
     <div className={styles.buttons}>
       <Paragraph size="large" variant="white">
@@ -23,5 +23,3 @@ const Pagination = ({ counterPage, handleCounterNext, handleCounterPrev }: Prop)
     </div>
   );
 };
-
-export { Pagination };
