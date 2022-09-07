@@ -4,26 +4,24 @@ import { useRouter } from 'next/router';
 import styles from './character.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppStore } from '@/redux/store';
-import { characterService } from '@/services';
 import { CharacterDetail } from './components';
 import { charactersAdapter } from '@/adapters';
-import { charactersSlice } from '@/redux/slices';
+import { getCharactersService } from '@/services';
+import { readCharacters } from '@/redux/slices';
 
 const Detail = () => {
   const router = useRouter();
   const [loader, setLoader] = useState(true);
   const characters = useSelector((store: AppStore) => store.characters);
   const dispatch = useDispatch();
-  const getCharacters = async () => {
-    const results = await characterService.getCharactersService(
-      setLoader,
-      Number(router.query.page)
-    );
-    dispatch(charactersSlice.readCharacters(results.map((result) => charactersAdapter(result))));
-  };
+
   useEffect(() => {
+    const getCharacters = async () => {
+      const results = await getCharactersService(setLoader, Number(router.query.page));
+      dispatch(readCharacters(results.map((result) => charactersAdapter(result))));
+    };
     getCharacters();
-  }, []);
+  }, [dispatch, router]);
   return (
     <Layout title="detail" description="description test">
       <Title variant="primary">Detail</Title>

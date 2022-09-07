@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  pageExtensions: ["page.tsx"],
+  pageExtensions: ['page.tsx'],
+  images: {
+    domains: ['rickandmortyapi.com'],
+  },
 };
 
 module.exports = nextConfig;

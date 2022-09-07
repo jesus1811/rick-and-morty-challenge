@@ -12,4 +12,4 @@ const locationAdapter = (location: Location) => {
   };
 };
 
-export default locationAdapter;
+export { locationAdapter };

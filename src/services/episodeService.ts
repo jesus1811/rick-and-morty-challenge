@@ -20,4 +20,4 @@ const getEpisodesService = async (setLoader: (isboolean: boolean) => void): Prom
 
 //delete
 
-export default { getEpisodesService };
+export { getEpisodesService };

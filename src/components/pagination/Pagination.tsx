@@ -24,4 +24,4 @@ const Pagination = ({ counterPage, handleCounterNext, handleCounterPrev }: Prop)
   );
 };
 
-export default Pagination;
+export { Pagination };

@@ -13,4 +13,4 @@ const getLocationsService = async (setLoader: Function, page: number): Promise<L
     setLoader(false);
   }
 };
-export default { getLocationsService };
+export { getLocationsService };

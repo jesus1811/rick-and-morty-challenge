@@ -15,4 +15,4 @@ const Button = ({ children, onClick, variant }: Prop) => {
   );
 };
 
-export default Button;
+export { Button };

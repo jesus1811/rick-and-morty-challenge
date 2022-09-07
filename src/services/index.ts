@@ -1,3 +1,4 @@
-export { default as characterService } from './characterService';
-export { default as episodeService } from './episodeService';
-export { default as locationService } from './locationService';
+export * from './characterService';
+export * from './episodeService';
+export * from './index';
+export * from './locationService';

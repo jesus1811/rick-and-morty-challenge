@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Layout, Loading, Title } from '@/components';
-import { episodeService } from '@/services';
 import { Banner, EpisodeCard, Pagination } from './components';
 import { useSelector, useDispatch } from 'react-redux';
-import { AppStore } from '@/redux/store';
 import { episodesAdapter } from '@/adapters';
 import styles from './home.module.scss';
-import { episodesSlice } from '@/redux/slices';
 import { useCounterSeason } from './hooks';
+import { getEpisodesService } from '@/services';
+import { readEpisodes } from '@/redux/slices';
+import { AppStore } from '@/redux/store';
 
 const Home = () => {
   const [isLoader, setIsLoader] = useState<boolean>(true);
@@ -16,11 +16,11 @@ const Home = () => {
   const { counterSeason, handleCounterSeason } = useCounterSeason();
   useEffect(() => {
     const getEpisodes = async () => {
-      const results = await episodeService.getEpisodesService(setIsLoader);
-      dispatch(episodesSlice.readEpisodes(results.map((result) => episodesAdapter(result))));
+      const results = await getEpisodesService(setIsLoader);
+      dispatch(readEpisodes(results.map((result) => episodesAdapter(result))));
     };
     getEpisodes();
-  }, []);
+  }, [dispatch]);
   return (
     <Layout
       title="Rickvana | Home"

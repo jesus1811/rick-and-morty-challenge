@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Layout, Loading, Pagination, Title } from '@/components';
-import { characterService } from '@/services';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppStore } from '@/redux/store';
 import { Character } from '@/models';
@@ -8,20 +7,23 @@ import { CharacterCard } from './components';
 import { useCounterPage } from '@/hooks';
 import { charactersAdapter } from '@/adapters';
 import styles from './character.module.scss';
-import { charactersSlice } from '@/redux/slices';
+import { readCharacters } from '@/redux/slices';
+import { getCharactersService } from '@/services';
 
 const Character = () => {
   const [isLoader, setIsLoader] = useState<boolean>(true);
   const dispatch = useDispatch();
   const characters: Character[] = useSelector((store: AppStore) => store.characters);
   const { counterPage, handleCounterNext, handleCounterPrev } = useCounterPage(setIsLoader);
+
   useEffect(() => {
     const getCharacters = async () => {
-      const results = await characterService.getCharactersService(setIsLoader, counterPage);
-      dispatch(charactersSlice.readCharacters(results.map((result) => charactersAdapter(result))));
+      const results = await getCharactersService(setIsLoader, counterPage);
+      dispatch(readCharacters(results.map((result) => charactersAdapter(result))));
     };
     getCharacters();
-  }, [counterPage]);
+  }, [counterPage, dispatch]);
+
   return (
     <Layout
       title="Rickvana | Characters"

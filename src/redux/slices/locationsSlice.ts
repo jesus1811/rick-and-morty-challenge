@@ -13,7 +13,4 @@ const locationsSlice = createSlice({
 const { readLocations } = locationsSlice.actions;
 const { reducer } = locationsSlice;
 
-export default {
-  reducer,
-  readLocations,
-};
+export { reducer as reducerLocations, readLocations };

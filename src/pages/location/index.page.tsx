@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Layout, Loading, Pagination, Title } from '@/components';
+import { Location } from '@/models';
 import { useCounterPage } from '@/hooks';
+import { AppStore } from '@/redux/store';
+import { getLocationsService } from '@/services';
+import { readLocations } from '@/redux/slices';
+import { locationAdapter } from '@/adapters';
 import { LocationCard } from './components';
 import styles from './location.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppStore } from '@/redux/store';
-import { Location } from '@/models';
-import { locationsSlice } from '@/redux/slices';
-import { locationService } from '@/services';
-import locationAdapter from '@/adapters/locationAdapter';
 
 const Locations = () => {
   const dispatch = useDispatch();
@@ -17,11 +17,11 @@ const Locations = () => {
   const { counterPage, handleCounterNext, handleCounterPrev } = useCounterPage(setIsLoader);
   useEffect(() => {
     const getLocations = async () => {
-      const results = await locationService.getLocationsService(setIsLoader, counterPage);
-      dispatch(locationsSlice.readLocations(results.map((result) => locationAdapter(result))));
+      const results = await getLocationsService(setIsLoader, counterPage);
+      dispatch(readLocations(results.map((result) => locationAdapter(result))));
     };
     getLocations();
-  }, [counterPage]);
+  }, [dispatch, counterPage]);
   return (
     <Layout
       title="Rickvana | Locations"

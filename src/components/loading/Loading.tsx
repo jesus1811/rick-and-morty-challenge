@@ -5,4 +5,4 @@ const Loading = () => {
   return <span className={styles.loading}></span>;
 };
 
-export default Loading;
+export { Loading };

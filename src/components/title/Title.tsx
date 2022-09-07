@@ -10,4 +10,4 @@ const Title = ({ children, variant }: Prop) => {
   return <h1 className={`${styles.text} ${styles[`text__${variant}`]}`}>{children}</h1>;
 };
 
-export default Title;
+export { Title };

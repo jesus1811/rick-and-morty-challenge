@@ -12,7 +12,4 @@ const episodesSlice = createSlice({
 });
 const { readEpisodes } = episodesSlice.actions;
 const { reducer } = episodesSlice;
-export default {
-  reducer,
-  readEpisodes,
-};
+export { reducer as reducerEpisodes, readEpisodes };

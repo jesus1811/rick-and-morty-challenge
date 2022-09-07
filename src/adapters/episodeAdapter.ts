@@ -10,4 +10,4 @@ const episodesAdapter = (episode: Episode) => ({
   url: episode.url,
 });
 
-export default episodesAdapter;
+export { episodesAdapter };

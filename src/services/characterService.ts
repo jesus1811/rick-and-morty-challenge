@@ -20,4 +20,4 @@ const getCharactersService = async (setLoader: Function, page: number): Promise<
 
 //delete
 
-export default { getCharactersService };
+export { getCharactersService };

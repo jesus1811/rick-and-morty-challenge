@@ -14,4 +14,4 @@ const charactersAdapter = (character: Character) => ({
   type: character.type,
   url: character.url,
 });
-export default charactersAdapter;
+export { charactersAdapter };

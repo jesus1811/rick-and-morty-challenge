@@ -15,4 +15,4 @@ const Paragraph = ({ variant, children, size }: Prop) => {
   );
 };
 
-export default Paragraph;
+export { Paragraph };

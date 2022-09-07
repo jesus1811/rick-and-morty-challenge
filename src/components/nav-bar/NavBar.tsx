@@ -1,6 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import styles from "./navBar.module.scss";
+import Link from 'next/link';
+import React from 'react';
+import styles from './navBar.module.scss';
 
 const NavBar = () => {
   return (
@@ -15,7 +15,7 @@ const NavBar = () => {
           <img className={styles.menuImage} src="/menu.svg" alt="menu" />
         </label>
         <div className={styles.options}>
-        <Link href="/home">
+          <Link href="/home">
             <h1 className={styles.option}>Episodes</h1>
           </Link>
           <Link href="/character">
@@ -30,4 +30,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export { NavBar };

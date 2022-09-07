@@ -11,7 +11,4 @@ const charactersSlice = createSlice({
 });
 const { readCharacters } = charactersSlice.actions;
 const { reducer } = charactersSlice;
-export default {
-  reducer,
-  readCharacters,
-};
+export { reducer as reducerCharacters, readCharacters };
