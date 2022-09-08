@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
-import Title from './Title';
+import { Title } from './Title';
 
 describe('Title.tsx', () => {
   test('renders content', () => {

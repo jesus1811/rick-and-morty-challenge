@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
-import Pagination from './Pagination';
+import { Pagination } from './Pagination';
 
 describe('Pagination.tsx', () => {
   test('renders content', () => {

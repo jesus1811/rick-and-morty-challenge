@@ -26,7 +26,8 @@ describe('CharacterCard.tsx', () => {
       species: 'Mythological Creature',
     };
     const component = render(<CharacterCard character={character} page={1} />);
-    component.getByText('Big Boobed Waitress');
+    // component.getByText('Big Boobed Waitress');
     component.getByText('#1');
+    component.getByText(character.name);
   });
 });

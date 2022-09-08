@@ -16,9 +16,8 @@ const CharacterCard = ({ character, page }: Prop) => {
     <Card>
       <Paragraph size="small" variant="white">
         <span className={styles.id}>#{character.id} </span>
-        {character.name} {JSON.stringify(isLoader)}
+        {character.name}
       </Paragraph>
-      {null}
       {isLoader && <Loading />}
       {/*  eslint-disable-next-line @next/next/no-img-element */}
       <img

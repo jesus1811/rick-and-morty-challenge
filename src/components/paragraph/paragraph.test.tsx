@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
-import Paragraph from './Paragraph';
+import { Paragraph } from './Paragraph';
 
 describe('Paragraph.tsx', () => {
   test('renders content', () => {
