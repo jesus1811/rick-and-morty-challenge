@@ -1,18 +1,18 @@
 @use '/src/scss/mixins' as *;
 @use '/src/scss/theme' as *;
 
-.text {
+.title {
   text-align: center;
   font-size: 48px;
   margin: 5px 0;
   font-weight: bold;
-  &__primary {
+  &_primary {
     color: $primary-100;
   }
-  &__secundary {
+  &_secundary {
     color: $secundary-200;
   }
-  &__white {
+  &_white {
     color: $white;
   }
 }

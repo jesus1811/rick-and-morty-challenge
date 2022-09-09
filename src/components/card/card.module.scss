@@ -1,9 +1,9 @@
 @use '/src/scss/mixins' as *;
 @use '/src/scss/theme' as *;
 
-.container {
-  padding: 20px;
+.card {
   @include flexCenter;
+  padding: 20px;
   flex-direction: column;
   background-color: $tertiary-100;
   border-radius: 4px;
@@ -11,7 +11,7 @@
   width: 100%;
   max-width: 550px;
   gap: 15px;
-  &__row {
+  &_row {
     flex-direction: row;
   }
 }

@@ -1,12 +1,10 @@
 @use '/src/scss/mixins' as *;
 @use '/src/scss/theme' as *;
 
-.container {
+.navBar {
   width: 100%;
-  display: flex;
+  @include flexCenter;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background: $secundary-200;
   opacity: 90%;
   position: sticky;
@@ -26,8 +24,12 @@
   color: $primary-100;
   cursor: pointer;
 }
-.menuIsToggle {
+.menu {
   display: none;
+  &__image {
+    width: 60px;
+    aspect-ratio: 1/1;
+  }
   @media screen and (max-width: 1024px) {
     display: initial;
   }
@@ -40,12 +42,20 @@
   }
 }
 .options {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCenter;
   gap: 24px;
   background: $secundary-200;
   transition: all ease-out 150ms;
+  &__option {
+    text-align: center;
+    color: $white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    &:hover {
+      color: $primary-100;
+    }
+  }
   @media screen and (max-width: 1024px) {
     position: absolute;
     right: 0;
@@ -56,15 +66,5 @@
     height: 0;
     overflow: hidden;
     padding: 0;
-  }
-}
-.option {
-  text-align: center;
-  color: $white;
-  font-size: 18px;
-  cursor: pointer;
-  transition: all ease-in-out 0.3s;
-  &:hover {
-    color: $primary-100;
   }
 }

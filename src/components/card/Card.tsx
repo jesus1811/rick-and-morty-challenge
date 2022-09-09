@@ -7,7 +7,7 @@ interface Prop {
 
 export const Card = ({ children, flexDirection }: Prop) => {
   return (
-    <article className={`${styles.container} ${styles[`container__${flexDirection}`]}`}>
+    <article className={`${styles.card} ${styles[`container_${flexDirection}`]}`}>
       {children}
     </article>
   );

@@ -9,7 +9,7 @@ interface Prop {
 
 export const Button = ({ children, onClick, variant }: Prop) => {
   return (
-    <button className={`${styles.button} ${styles[`button__${variant}`]}`} onClick={onClick}>
+    <button className={`${styles.button} ${styles[`button_${variant}`]}`} onClick={onClick}>
       {children}
     </button>
   );

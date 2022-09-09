@@ -9,7 +9,11 @@ interface Prop {
 
 export const Paragraph = ({ variant, children, size }: Prop) => {
   return (
-    <p className={`${styles.text} ${styles[`text__${variant}`]} ${styles[`text__${size}`]}`}>
+    <p
+      className={`${styles.paragraph} ${styles[`paragraph_${variant}`]} ${
+        styles[`paragraph_${size}`]
+      }`}
+    >
       {children}
     </p>
   );

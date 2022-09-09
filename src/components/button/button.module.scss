@@ -5,7 +5,7 @@
   padding: 8px 20px;
   border-radius: 4px;
   font-weight: 500;
-  &__primary {
+  &_primary {
     background-color: $primary-100;
     color: $secundary-200;
     border: solid 1px $primary-100;
@@ -14,12 +14,12 @@
       background-color: $primary-200;
     }
   }
-  &__secundary {
+  &_secundary {
     background-color: $secundary-200;
     color: $white;
     border: solid 1px $secundary-200;
   }
-  &__outline {
+  &_outline {
     background-color: transparent;
     color: $primary-100;
     border: solid 1px $primary-100;
@@ -30,7 +30,7 @@
       color: $secundary-200;
     }
   }
-  &__disable {
+  &_disable {
     background-color: $backgroundDisable;
     color: $colorDisable;
     border: solid 1px $backgroundDisable;

@@ -1,24 +1,24 @@
 @use '/src/scss/mixins' as *;
 @use '/src/scss/theme' as *;
 
-.text {
+.paragraph {
   text-align: center;
-  &__small {
+  &_small {
     font-size: 15px;
   }
-  &__medium {
+  &_medium {
     font-size: 20px;
   }
-  &__large {
+  &_large {
     font-size: 25px;
   }
-  &__primary {
+  &_primary {
     color: $primary-100;
   }
-  &__secundary {
+  &_secundary {
     color: $secundary-200;
   }
-  &__white {
+  &_white {
     color: $white;
   }
 }
