@@ -1,5 +1,6 @@
 export * from './button/Button';
 export * from './card/Card';
+export * from './input/Input';
 export * from './layout/Layout';
 export * from './loading/Loading';
 export * from './nav-bar/NavBar';

@@ -8,6 +8,8 @@
   background-color: $tertiary-100;
   border-radius: 4px;
   min-height: 180px;
+  width: 100%;
+  max-width: 550px;
   gap: 15px;
   &__row {
     flex-direction: row;
