@@ -8,6 +8,9 @@ import { useCounterSeason } from './hooks';
 import { getEpisodesService } from '@/services';
 import { readEpisodes } from '@/redux/slices';
 import { AppStore } from '@/redux/store';
+import io from 'socket.io-client';
+
+const socket = io('http://localhost:3001');
 
 const Home = () => {
   const [isLoader, setIsLoader] = useState<boolean>(true);
@@ -21,6 +24,20 @@ const Home = () => {
     };
     getEpisodes();
   }, [dispatch]);
+
+  useEffect(() => {
+    socket.emit('initial', 1);
+  }, []);
+  useEffect(() => {
+    socket.on('message', (messages) => {
+      console.log(messages);
+    });
+    return () => {
+      socket.off('message', (messages) => {
+        console.log(messages);
+      });
+    };
+  }, []);
   return (
     <Layout
       title="Rickvana | Home"

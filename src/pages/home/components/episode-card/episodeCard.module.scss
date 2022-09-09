@@ -50,3 +50,20 @@
   width: 38px;
   cursor: pointer;
 }
+.row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.message {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background-color: $secundary-200;
+  padding: 15px;
+  border-radius: 5px;
+}

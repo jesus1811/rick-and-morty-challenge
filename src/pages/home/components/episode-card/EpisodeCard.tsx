@@ -60,11 +60,47 @@ const EpisodeCard = ({ episode }: Prop) => {
             ))}
           </div>
           <Paragraph size="large" variant="primary">
-            Created:
+            Comentarios ( en mantenimiento..... 🚧🚧🚧):
           </Paragraph>
-          <Paragraph size="small" variant="white">
-            {episode.created.slice(0, 10)} {episode.created.slice(11, 19)}
-          </Paragraph>
+
+          <Card>
+            <div className={styles.row}>
+              <img
+                className={styles.image}
+                src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+                alt=""
+              />
+              <Paragraph size="large" variant="primary">
+                Jesus Ayarza
+              </Paragraph>
+              <Paragraph size="small" variant="white">
+                2022/09/08
+              </Paragraph>
+            </div>
+            <div className={styles.message}>
+              <Paragraph size="small" variant="white">
+                Buen Episodio
+              </Paragraph>
+            </div>
+            <div className={styles.row}>
+              <img
+                className={styles.image}
+                src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+                alt=""
+              />
+              <Paragraph size="large" variant="primary">
+                Jesus Ayarza
+              </Paragraph>
+              <Paragraph size="small" variant="white">
+                2022/09/08
+              </Paragraph>
+            </div>
+            <div className={styles.message}>
+              <Paragraph size="small" variant="white">
+                Buen Episodio
+              </Paragraph>
+            </div>
+          </Card>
         </div>
       </Modal>
     </>
