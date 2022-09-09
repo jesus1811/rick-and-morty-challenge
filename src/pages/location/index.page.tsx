@@ -14,7 +14,7 @@ const Locations = () => {
   const dispatch = useDispatch();
   const locations: Location[] = useSelector((store: AppStore) => store.locations);
   const [isLoader, setIsLoader] = useState<boolean>(true);
-  const { counterPage, handleCounterNext, handleCounterPrev } = useCounterPage(setIsLoader);
+  const { counterPage, handleCounterNext, handleCounterPrev } = useCounterPage();
   useEffect(() => {
     const getLocations = async () => {
       const results = await getLocationsService(setIsLoader, counterPage);

@@ -21,7 +21,7 @@ const CharacterCard = ({ character, page }: Prop) => {
       {isLoader && <Loading />}
       {/*  eslint-disable-next-line @next/next/no-img-element */}
       <img
-        className={`${styles.image} ${isLoader && styles.disable}`}
+        className={`${styles.image} ${isLoader && styles.image_disable}`}
         src={character.image}
         alt={character.name}
         loading="lazy"

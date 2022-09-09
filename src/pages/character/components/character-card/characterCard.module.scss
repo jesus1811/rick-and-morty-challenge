@@ -4,11 +4,11 @@
 .image {
   width: 100%;
   border-radius: 4px;
+  &_disable {
+    width: 0;
+  }
 }
 .id {
   font-weight: 500;
   color: $primary-100;
-}
-.disable {
-  width: 0;
 }

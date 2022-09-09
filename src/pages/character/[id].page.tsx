@@ -1,32 +1,18 @@
-import React, { useEffect, useState } from 'react';
 import { Layout, Loading, Title } from '@/components';
 import { useRouter } from 'next/router';
-import styles from './character.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { AppStore } from '@/redux/store';
 import { CharacterDetail } from './components';
-import { charactersAdapter } from '@/adapters';
-import { getCharactersService } from '@/services';
-import { readCharacters } from '@/redux/slices';
+import { useCharacters } from './hooks';
+import styles from './detail.module.scss';
 
 const Detail = () => {
   const router = useRouter();
-  const [loader, setLoader] = useState(true);
-  const characters = useSelector((store: AppStore) => store.characters);
-  const dispatch = useDispatch();
+  const { characters, isLoader } = useCharacters(Number(router.query.page));
 
-  useEffect(() => {
-    const getCharacters = async () => {
-      const results = await getCharactersService(setLoader, Number(router.query.page));
-      dispatch(readCharacters(results.map((result) => charactersAdapter(result))));
-    };
-    getCharacters();
-  }, [dispatch, router]);
   return (
     <Layout title="detail" description="description test">
-      <Title variant="primary">Detail</Title>
-      <div className={styles.details}>
-        {loader ? (
+      <Title variant="primary">Detail {router.query.page}</Title>
+      <div className={styles.characterDetails}>
+        {isLoader ? (
           <Loading />
         ) : (
           characters
