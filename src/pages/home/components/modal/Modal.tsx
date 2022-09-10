@@ -6,7 +6,7 @@ import { getCurrentDate, getCurrentTime, getURLVideoFirebaseUtility } from '@/ut
 import { useField } from '@/hooks';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:3001');
+const socket = io(process.env.NEXT_PUBLIC_SOCKET_CHAT!);
 
 interface Prop {
   episode: Episode;
@@ -76,7 +76,7 @@ const Modal = ({ episode, messages, setIsModal, isModal }: Prop) => {
           </div>
           {messages
             .filter((message) => message.idroom === episode.id)
-            .reverse()
+            // .reverse()
             .map((message) => (
               <>
                 <div key={message.idmessage} className={styles.row}>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Layout, Loading, Title } from '@/components';
-import { Banner, EpisodeCard, Modal, Pagination } from './components';
+import { Banner, EpisodeCard, Pagination } from './components';
 import { useSelector, useDispatch } from 'react-redux';
 import { episodesAdapter } from '@/adapters';
 import styles from './home.module.scss';
@@ -11,7 +11,7 @@ import { AppStore } from '@/redux/store';
 import io from 'socket.io-client';
 import { Message } from '@/models';
 
-const socket = io('http://localhost:3001');
+const socket = io(process.env.NEXT_PUBLIC_SOCKET_CHAT!);
 
 const Home = () => {
   const [isLoader, setIsLoader] = useState<boolean>(true);
@@ -26,12 +26,17 @@ const Home = () => {
     };
     getEpisodes();
   }, [dispatch]);
+
   useEffect(() => {
-    socket.emit('initial', 1);
+    socket.emit('initial');
+  }, []);
+  useEffect(() => {
     socket.on('message', (messages) => {
+      console.log(messages);
+
       setMessages(messages);
     });
-  }, []);
+  }, [messages]);
   return (
     <Layout
       title="Rickvana | Home"
