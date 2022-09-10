@@ -31,12 +31,7 @@ const Home = () => {
     socket.on('message', (messages) => {
       setMessages(messages);
     });
-    return () => {
-      socket.off('message', (messages) => {
-        setMessages(messages);
-      });
-    };
-  }, [messages]);
+  }, []);
   return (
     <Layout
       title="Rickvana | Home"

@@ -1,9 +1,12 @@
-import { Card, Input, Paragraph, Title } from '@/components';
-import React, { useState } from 'react';
+import { Button, Input, Paragraph, Title } from '@/components';
 import { Modal as ModalMUI } from '@mui/material';
 import styles from './modal.module.scss';
 import { Episode, Message } from '@/models';
-import { getURLVideoFirebaseUtility } from '@/utilities';
+import { getCurrentDate, getCurrentTime, getURLVideoFirebaseUtility } from '@/utilities';
+import { useField } from '@/hooks';
+import io from 'socket.io-client';
+
+const socket = io('http://localhost:3001');
 
 interface Prop {
   episode: Episode;
@@ -13,6 +16,18 @@ interface Prop {
 }
 
 const Modal = ({ episode, messages, setIsModal, isModal }: Prop) => {
+  const textMessage = useField('');
+
+  const handleCreateMessage = () => {
+    socket.emit('message', {
+      datemessage: getCurrentDate(),
+      hourmessage: getCurrentTime(),
+      iduser: 'demo', //🚧🚧 en progreso... 🚧🚧
+      textmessage: textMessage.value,
+      idroom: episode.id,
+    });
+    textMessage.handleReset();
+  };
   return (
     <ModalMUI open={isModal} onClose={() => setIsModal(false)}>
       <div className={styles.modal}>
@@ -53,8 +68,15 @@ const Modal = ({ episode, messages, setIsModal, isModal }: Prop) => {
           Comentarios ( en mantenimiento..... 🚧🚧🚧):
         </Paragraph>
         <div className={styles.comments}>
+          <div className={styles.message}>
+            <Input {...textMessage} placeholder="Comenta aqui" value={textMessage.value} />
+            <Button onClick={handleCreateMessage} variant="outline">
+              Send comment
+            </Button>
+          </div>
           {messages
             .filter((message) => message.idroom === episode.id)
+            .reverse()
             .map((message) => (
               <>
                 <div key={message.idmessage} className={styles.row}>
@@ -64,22 +86,22 @@ const Modal = ({ episode, messages, setIsModal, isModal }: Prop) => {
                     alt=""
                   />
                   <Paragraph size="medium" variant="primary">
-                    Jesus Ayarza
+                    {message.nameuser}
                   </Paragraph>
                   <Paragraph size="small" variant="white">
-                    2022/09/08
+                    {message.datemessage.slice(0, 10)}
+                  </Paragraph>
+                  <Paragraph size="small" variant="white">
+                    {message.hourmessage.slice(0, 5)}
                   </Paragraph>
                 </div>
                 <div key={message.idmessage} className={styles.message}>
                   <Paragraph size="small" variant="white">
-                    Buen Episodio
+                    {message.textmessage}
                   </Paragraph>
                 </div>
               </>
             ))}
-          <div className={styles.message}>
-            <Input onChange={() => {}} placeholder="Comenta aqui" />
-          </div>
         </div>
       </div>
     </ModalMUI>
