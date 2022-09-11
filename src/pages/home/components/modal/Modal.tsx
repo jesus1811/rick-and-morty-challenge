@@ -76,7 +76,7 @@ const Modal = ({ episode, messages, setIsModal, isModal }: Prop) => {
           </div>
           {messages
             .filter((message) => message.idroom === episode.id)
-            // .reverse()
+            .reverse()
             .map((message) => (
               <>
                 <div key={message.idmessage} className={styles.row}>
