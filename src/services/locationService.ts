@@ -1,10 +1,15 @@
-import { Location } from '@/models';
-import axios from 'axios';
+import { Location } from "@/models";
+import axios from "axios";
 
-const getLocationsService = async (setLoader: Function, page: number): Promise<Location[]> => {
+const endPointRickAndMorty = `${process.env.NEXT_PUBLIC_RICK_AND_MORTY}/api`;
+
+const getLocationsService = async (
+  setLoader: Function,
+  page: number
+): Promise<Location[]> => {
   try {
     const response = await axios.get(
-      `${process.env.NEXT_PUBLIC_RICK_AND_MORTY}/location?page=${page}`
+      `${endPointRickAndMorty}/location?page=${page}`
     );
     if (response.status === 200) return response.data.results;
     return [];
