@@ -15,13 +15,10 @@ export const NavBar = () => {
         </label>
         <div className={styles.options}>
           <Link href="/home">
-            <h1 className={styles.options__option}>Episodes</h1>
+            <a className={styles.options__option}>Episodes</a>
           </Link>
           <Link href="/character">
-            <h1 className={styles.options__option}>Characters</h1>
-          </Link>
-          <Link href="/location">
-            <h1 className={styles.options__option}>Locations</h1>
+            <a className={styles.options__option}>Characters</a>
           </Link>
         </div>
       </div>

@@ -27,10 +27,7 @@ const CharacterCard = ({ character, page }: Prop) => {
         loading="lazy"
         onLoad={() => setIsloader(false)}
       />
-      <Button
-        variant="outline"
-        onClick={() => router.push(`./character/${character.id}?page=${page}`)}
-      >
+      <Button outline onClick={() => router.push(`./character/${character.id}?page=${page}`)}>
         View
       </Button>
     </Card>

@@ -5,7 +5,7 @@ import { Button } from './Button';
 describe('Button.tsx', () => {
   test('renders content', () => {
     const component = render(
-      <Button variant="primary" onClick={() => alert('hello world')}>
+      <Button primary onClick={() => alert('hello world')}>
         click me
       </Button>
     );

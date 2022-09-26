@@ -13,15 +13,13 @@ const Pagination = ({ setSeason, season }: Prop) => {
       <Paragraph size="large" variant="white">
         Season {season}
       </Paragraph>
-      <Button variant="primary" onClick={() => setSeason(1)}>
+      <Button primary onClick={() => setSeason(1)}>
         season 1
       </Button>
-      <Button variant="primary" onClick={() => setSeason(2)}>
+      <Button primary onClick={() => setSeason(2)}>
         season 2
       </Button>
-      <Button variant="disable" onClick={() => {}}>
-        season 3
-      </Button>
+      <Button disable>season 3</Button>
     </div>
   );
 };

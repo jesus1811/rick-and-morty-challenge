@@ -19,7 +19,7 @@ const EpisodeCard = ({ episode, messages }: Prop) => {
         <Paragraph size="small" variant="white">
           {episode.name}
         </Paragraph>
-        <Button variant="outline" onClick={() => setIsModal(true)}>
+        <Button outline onClick={() => setIsModal(true)}>
           View Episode
         </Button>
       </Card>

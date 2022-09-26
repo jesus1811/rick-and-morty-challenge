@@ -14,10 +14,10 @@ export const Pagination = ({ counterPage, handleCounterNext, handleCounterPrev }
       <Paragraph size="large" variant="white">
         #Page {counterPage}
       </Paragraph>
-      <Button variant="primary" onClick={handleCounterPrev}>
+      <Button primary onClick={handleCounterPrev}>
         Back
       </Button>
-      <Button variant="primary" onClick={handleCounterNext}>
+      <Button primary onClick={handleCounterNext}>
         Next
       </Button>
     </div>

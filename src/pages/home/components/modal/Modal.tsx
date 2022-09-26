@@ -70,7 +70,7 @@ const Modal = ({ episode, messages, setIsModal, isModal }: Prop) => {
         <div className={styles.comments}>
           <div className={styles.message}>
             <Input {...textMessage} placeholder="Comenta aqui" value={textMessage.value} />
-            <Button onClick={handleCreateMessage} variant="outline">
+            <Button onClick={handleCreateMessage} outline>
               Send comment
             </Button>
           </div>
