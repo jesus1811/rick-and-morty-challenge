@@ -10,7 +10,7 @@ interface Prop {
 const Pagination = ({ setSeason, season }: Prop) => {
   return (
     <div className={styles.buttons}>
-      <Paragraph size="large" variant="white">
+      <Paragraph large white>
         Season {season}
       </Paragraph>
       <Button primary onClick={() => setSeason(1)}>

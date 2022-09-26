@@ -14,7 +14,7 @@ const CharacterCard = ({ character, page }: Prop) => {
   const [isLoader, setIsloader] = useState<boolean>(true);
   return (
     <Card>
-      <Paragraph size="small" variant="white">
+      <Paragraph small white>
         <span className={styles.id}>#{character.id} </span>
         {character.name}
       </Paragraph>

@@ -3,22 +3,28 @@
 
 .paragraph {
   text-align: center;
-  &_small {
+
+  &--small {
     font-size: 15px;
   }
-  &_medium {
+
+  &--medium {
     font-size: 20px;
   }
-  &_large {
+
+  &--large {
     font-size: 25px;
   }
-  &_primary {
+
+  &--primary {
     color: $primary-100;
   }
-  &_secundary {
+
+  &--secundary {
     color: $secundary-200;
   }
-  &_white {
+
+  &--white {
     color: $white;
   }
 }

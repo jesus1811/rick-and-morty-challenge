@@ -8,7 +8,5 @@ interface Prop {
 }
 
 export const Input = ({ placeholder, onChange, value }: Prop) => {
-  return (
-    <input className={styles.input} placeholder={placeholder} onChange={onChange} value={value} />
-  );
+  return <input className={styles.input} placeholder={placeholder} onChange={onChange} value={value} />;
 };

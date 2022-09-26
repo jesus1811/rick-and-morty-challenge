@@ -12,27 +12,27 @@ const CharacterDetail = ({ character }: { character: Character }) => {
       <Card>
         <Title variant="primary">{character.name}</Title>
         <div className={styles.informations}>
-          <Paragraph variant="primary" size="large">
+          <Paragraph primary large>
             Gender:
             <span className={styles.information}> {character.gender}</span>
           </Paragraph>
-          <Paragraph variant="primary" size="large">
+          <Paragraph primary large>
             Create:
             <span className={styles.information}> {character.created.slice(0, 10)}</span>
           </Paragraph>
-          <Paragraph variant="primary" size="large">
+          <Paragraph primary large>
             Specie:
             <span className={styles.information}> {character.species}</span>
           </Paragraph>
-          <Paragraph variant="primary" size="large">
+          <Paragraph primary large>
             Location:
             <span className={styles.information}> {character.location.name}</span>
           </Paragraph>
-          <Paragraph variant="primary" size="large">
+          <Paragraph primary large>
             Origin:
             <span className={styles.information}> earth</span>
           </Paragraph>
-          <Paragraph variant="primary" size="large">
+          <Paragraph primary large>
             Type:
             <span className={styles.information}> {character.type}</span>
           </Paragraph>

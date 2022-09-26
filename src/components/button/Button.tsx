@@ -15,7 +15,7 @@ export const Button = ({ children, onClick, primary, disable, secundary, outline
   return (
     <button
       className={cn(
-        styles['button'],
+        styles.button,
         { [styles['button--primary']]: primary },
         { [styles['button--secundary']]: secundary },
         { [styles['button--outline']]: outline },

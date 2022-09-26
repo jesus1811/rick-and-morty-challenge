@@ -1,18 +1,29 @@
 import React from 'react';
 import styles from './paragraph.module.scss';
+import cn from 'classnames';
 
 interface Prop {
-  size: 'small' | 'medium' | 'large';
-  children: any;
-  variant: 'primary' | 'secundary' | 'white';
+  children: React.ReactNode;
+  primary?: boolean;
+  secundary?: boolean;
+  white?: boolean;
+  small?: boolean;
+  medium?: boolean;
+  large?: boolean;
 }
 
-export const Paragraph = ({ variant, children, size }: Prop) => {
+export const Paragraph = ({ children, primary, secundary, white, small, medium, large }: Prop) => {
   return (
     <p
-      className={`${styles.paragraph} ${styles[`paragraph_${variant}`]} ${
-        styles[`paragraph_${size}`]
-      }`}
+      className={cn(
+        styles.paragraph,
+        { [styles['paragraph--primary']]: primary },
+        { [styles['paragraph--secundary']]: secundary },
+        { [styles['paragraph--white']]: white },
+        { [styles['paragraph--small']]: small },
+        { [styles['paragraph--medium']]: medium },
+        { [styles['paragraph--large']]: large }
+      )}
     >
       {children}
     </p>

@@ -9,9 +9,9 @@
   border-radius: 4px;
   min-height: 180px;
   width: 100%;
-  max-width: 550px;
+  max-width: 450px;
   gap: 15px;
-  &_row {
+  &--row {
     flex-direction: row;
   }
 }

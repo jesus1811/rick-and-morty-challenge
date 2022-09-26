@@ -13,10 +13,10 @@ const EpisodeCard = ({ episode, messages }: Prop) => {
   return (
     <>
       <Card>
-        <Paragraph variant="primary" size="small">
+        <Paragraph primary small>
           Episode: {episode.episode.slice(4, 6)}
         </Paragraph>
-        <Paragraph size="small" variant="white">
+        <Paragraph small white>
           {episode.name}
         </Paragraph>
         <Button outline onClick={() => setIsModal(true)}>

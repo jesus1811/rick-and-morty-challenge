@@ -11,7 +11,7 @@ interface Prop {
 export const Pagination = ({ counterPage, handleCounterNext, handleCounterPrev }: Prop) => {
   return (
     <div className={styles.pagination}>
-      <Paragraph size="large" variant="white">
+      <Paragraph large white>
         #Page {counterPage}
       </Paragraph>
       <Button primary onClick={handleCounterPrev}>

@@ -1,14 +1,11 @@
 import React, { ReactNode } from 'react';
 import styles from './card.module.scss';
+import cn from 'classnames';
 interface Prop {
   children: ReactNode;
-  flexDirection?: 'row';
+  row?: boolean;
 }
 
-export const Card = ({ children, flexDirection }: Prop) => {
-  return (
-    <article className={`${styles.card} ${styles[`container_${flexDirection}`]}`}>
-      {children}
-    </article>
-  );
+export const Card = ({ children, row }: Prop) => {
+  return <article className={cn(styles.card, { [styles['card--row']]: row })}>{children}</article>;
 };

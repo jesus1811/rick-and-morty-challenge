@@ -24,7 +24,7 @@ const Modal = ({ episode, messages, setIsModal, isModal }: Prop) => {
       hourmessage: getCurrentTime(),
       iduser: 'demo', //🚧🚧 en progreso... 🚧🚧
       textmessage: textMessage.value,
-      idroom: episode.id,
+      idroom: episode.id
     });
     textMessage.handleReset();
   };
@@ -32,12 +32,7 @@ const Modal = ({ episode, messages, setIsModal, isModal }: Prop) => {
     <ModalMUI open={isModal} onClose={() => setIsModal(false)}>
       <div className={styles.modal}>
         <span className={styles.icons}>
-          <img
-            className={styles.icon}
-            src="/close.svg"
-            alt="close"
-            onClick={() => setIsModal(false)}
-          />
+          <img className={styles.icon} src="/close.svg" alt="close" onClick={() => setIsModal(false)} />
         </span>
         <Title variant="primary">
           Episode {episode.episode.slice(4)} - {episode.name}
@@ -46,12 +41,10 @@ const Modal = ({ episode, messages, setIsModal, isModal }: Prop) => {
           className={styles.video}
           autoPlay
           controls
-          src={getURLVideoFirebaseUtility(
-            `${episode.episode.slice(1, 3)}x${episode.episode.slice(4)}.mkv`
-          )}
+          src={getURLVideoFirebaseUtility(`${episode.episode.slice(1, 3)}x${episode.episode.slice(4)}.mkv`)}
         />
 
-        <Paragraph size="large" variant="primary">
+        <Paragraph large primary>
           Characters:
         </Paragraph>
         <div className={styles.images}>
@@ -64,7 +57,7 @@ const Modal = ({ episode, messages, setIsModal, isModal }: Prop) => {
             />
           ))}
         </div>
-        <Paragraph size="large" variant="primary">
+        <Paragraph large primary>
           Comentarios ( en mantenimiento..... 🚧🚧🚧):
         </Paragraph>
         <div className={styles.comments}>
@@ -75,28 +68,24 @@ const Modal = ({ episode, messages, setIsModal, isModal }: Prop) => {
             </Button>
           </div>
           {messages
-            .filter((message) => message.idroom === episode.id)
+            .filter(message => message.idroom === episode.id)
             .reverse()
-            .map((message) => (
+            .map(message => (
               <>
                 <div key={message.idmessage} className={styles.row}>
-                  <img
-                    className={styles.image}
-                    src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-                    alt=""
-                  />
-                  <Paragraph size="medium" variant="primary">
+                  <img className={styles.image} src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="" />
+                  <Paragraph medium primary>
                     {message.nameuser}
                   </Paragraph>
-                  <Paragraph size="small" variant="white">
+                  <Paragraph small white>
                     {message.datemessage.slice(0, 10)}
                   </Paragraph>
-                  <Paragraph size="small" variant="white">
+                  <Paragraph small white>
                     {message.hourmessage.slice(0, 5)}
                   </Paragraph>
                 </div>
                 <div key={message.idmessage} className={styles.message}>
-                  <Paragraph size="small" variant="white">
+                  <Paragraph small white>
                     {message.textmessage}
                   </Paragraph>
                 </div>
