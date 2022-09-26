@@ -1,3 +1,3 @@
-export * from './charactersSlice';
-export * from './episodesSlice';
-export * from './locationsSlice';
+export * from './characters.slice';
+export * from './episodes.slice';
+export * from './locations.slice';

@@ -1,4 +1,2 @@
-export * from './characterService';
-export * from './episodeService';
-export * from './index';
-export * from './locationService';
+export * from './character.service';
+export * from './episode.service';

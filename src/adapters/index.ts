@@ -1,4 +1,3 @@
-export * from './charactersAdapter';
-export * from './episodeAdapter';
-export * from './index';
-export * from './locationAdapter';
+export * from './characters.adapter';
+export * from './episode.adapter';
+export * from './location.adapter';
