@@ -1,57 +1,26 @@
-import React, { useEffect, useState } from 'react';
 import { Layout, Loading, Title } from '@/components';
 import { Banner, EpisodeCard, Pagination } from './components';
-import { useSelector, useDispatch } from 'react-redux';
-import { episodesAdapter } from '@/adapters';
 import styles from './home.module.scss';
 import { useCounterSeason } from './hooks';
-import { getEpisodesService } from '@/services';
-import { readEpisodes } from '@/redux/slices';
-import { AppStore } from '@/redux/store';
-import io from 'socket.io-client';
-import { Message } from '@/models';
-
-const socket = io(process.env.NEXT_PUBLIC_SOCKET_CHAT!);
+import useEpisodes from './hooks/useEpisodes.hook';
+import useMessages from './hooks/useMessages.hook';
 
 const Home = () => {
-  const [isLoader, setIsLoader] = useState<boolean>(true);
-  const [messages, setMessages] = useState<Message[]>([]);
-  const dispatch = useDispatch();
-  const episodes = useSelector((store: AppStore) => store.episodes);
   const { counterSeason, handleCounterSeason } = useCounterSeason();
-  useEffect(() => {
-    const getEpisodes = async () => {
-      const results = await getEpisodesService(setIsLoader);
-      dispatch(readEpisodes(results.map((result) => episodesAdapter(result))));
-    };
-    getEpisodes();
-  }, [dispatch]);
-
-  useEffect(() => {
-    socket.emit('initial');
-  }, []);
-  useEffect(() => {
-    socket.on('message', (messages) => {
-      console.log(messages);
-
-      setMessages(messages);
-    });
-  }, [messages]);
+  const { isLoaderEpisodes, episodes } = useEpisodes();
+  const { messages } = useMessages();
   return (
-    <Layout
-      title="Rickvana | Home"
-      description="Plataforma de rick and morty para ver la serie e informarse"
-    >
+    <Layout title="Rickvana | Home" description="Plataforma de rick and morty para ver la serie e informarse">
       <Banner />
       <Title variant="primary">Episodes</Title>
       <Pagination season={counterSeason} setSeason={handleCounterSeason} />
-      {isLoader ? (
+      {isLoaderEpisodes ? (
         <Loading />
       ) : (
         <div className={styles.cards}>
           {episodes
-            .filter((episode) => episode.episode.slice(1, 3) === `0${counterSeason}`)
-            .map((episode) => (
+            .filter(episode => episode.episode.slice(1, 3) === `0${counterSeason}`)
+            .map(episode => (
               <EpisodeCard key={episode.id} episode={episode} messages={messages} />
             ))}
         </div>
