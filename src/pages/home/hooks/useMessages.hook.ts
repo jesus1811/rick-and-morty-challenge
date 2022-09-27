@@ -11,8 +11,6 @@ const useMessages = () => {
   }, []);
   useEffect(() => {
     socket.on('message', messages => {
-      console.log(messages);
-
       setMessages(messages);
     });
   }, [messages]);
