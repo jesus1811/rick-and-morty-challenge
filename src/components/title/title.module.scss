@@ -6,13 +6,20 @@
   font-size: 48px;
   margin: 5px 0;
   font-weight: bold;
-  &_primary {
+
+  &--primary {
     color: $primary-100;
   }
-  &_secundary {
+
+  &--secundary {
     color: $secundary-200;
   }
-  &_white {
+
+  &---white {
     color: $white;
+  }
+
+  &--left {
+    text-align: left;
   }
 }

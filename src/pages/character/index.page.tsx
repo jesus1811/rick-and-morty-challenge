@@ -10,7 +10,7 @@ const Character = () => {
   const { characters, isLoader } = useCharacters(page);
   return (
     <Layout title="Rickvana | Characters" description="Plataforma de rick and morty para ver la serie e informarse">
-      <Title variant="primary">Characters</Title>
+      <Title primary>Characters</Title>
       <Pagination />
       {isLoader ? (
         <Loading />

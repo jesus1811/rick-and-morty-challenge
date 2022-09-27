@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <Layout title="Rickvana | Home" description="Plataforma de rick and morty para ver la serie e informarse">
       <Banner />
-      <Title variant="primary">Episodes</Title>
+      <Title primary>Episodes</Title>
       <Pagination />
       {isLoaderEpisodes ? (
         <Loading />

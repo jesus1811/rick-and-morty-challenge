@@ -10,29 +10,29 @@ const CharacterDetail = ({ character }: { character: Character }) => {
         <img className={styles.image} src={character.image} alt={character.name} loading="lazy" />
       </Card>
       <Card>
-        <Title variant="primary">{character.name}</Title>
+        <Title primary>{character.name}</Title>
         <div className={styles.informations}>
-          <Paragraph primary large>
+          <Paragraph primary medium>
             Gender:
             <span className={styles.information}> {character.gender}</span>
           </Paragraph>
-          <Paragraph primary large>
+          <Paragraph primary medium>
             Create:
             <span className={styles.information}> {character.created.slice(0, 10)}</span>
           </Paragraph>
-          <Paragraph primary large>
+          <Paragraph primary medium>
             Specie:
             <span className={styles.information}> {character.species}</span>
           </Paragraph>
-          <Paragraph primary large>
+          <Paragraph primary medium>
             Location:
             <span className={styles.information}> {character.location.name}</span>
           </Paragraph>
-          <Paragraph primary large>
+          <Paragraph primary medium>
             Origin:
             <span className={styles.information}> earth</span>
           </Paragraph>
-          <Paragraph primary large>
+          <Paragraph primary medium>
             Type:
             <span className={styles.information}> {character.type}</span>
           </Paragraph>

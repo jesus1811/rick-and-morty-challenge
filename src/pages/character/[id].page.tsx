@@ -10,14 +10,14 @@ const Detail = () => {
 
   return (
     <Layout title="detail" description="description test">
-      <Title variant="primary">Detail {router.query.page}</Title>
+      <Title primary>Detail</Title>
       <div className={styles.characterDetails}>
         {isLoader ? (
           <Loading />
         ) : (
           characters
-            .filter((character) => character.id === Number(router.query.id))
-            .map((character) => <CharacterDetail key={character.id} character={character} />)
+            .filter(character => character.id === Number(router.query.id))
+            .map(character => <CharacterDetail key={character.id} character={character} />)
         )}
       </div>
     </Layout>

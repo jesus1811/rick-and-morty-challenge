@@ -34,7 +34,7 @@ const Modal = ({ episode, messages, setIsModal, isModal }: Prop) => {
         <span className={styles.icons}>
           <img className={styles.icon} src="/close.svg" alt="close" onClick={() => setIsModal(false)} />
         </span>
-        <Title variant="primary">
+        <Title primary>
           Episode {episode.episode.slice(4)} - {episode.name}
         </Title>
         <video
