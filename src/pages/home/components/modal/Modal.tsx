@@ -22,7 +22,7 @@ const Modal = ({ episode, messages, setIsModal, isModal }: Prop) => {
     socket.emit('message', {
       datemessage: getCurrentDate(),
       hourmessage: getCurrentTime(),
-      iduser: 'demo', //🚧🚧 en progreso... 🚧🚧
+      iduser: 'demo', //🚧🚧 in progress... 🚧🚧
       textmessage: textMessage.value,
       idroom: episode.id
     });
@@ -43,7 +43,6 @@ const Modal = ({ episode, messages, setIsModal, isModal }: Prop) => {
           controls
           src={getURLVideoFirebaseUtility(`${episode.episode.slice(1, 3)}x${episode.episode.slice(4)}.mkv`)}
         />
-
         <Paragraph large primary>
           Characters:
         </Paragraph>

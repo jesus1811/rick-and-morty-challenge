@@ -5,7 +5,7 @@ import { NavBar } from '../nav-bar/NavBar';
 interface Prop {
   title: string;
   description: string;
-  children: JSX.Element | JSX.Element[];
+  children: React.ReactNode;
 }
 
 export const Layout = ({ title, description, children }: Prop) => {

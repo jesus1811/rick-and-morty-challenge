@@ -6,18 +6,18 @@ import { AppStore } from '@/redux/store';
 import { readCharacters } from '@/redux/slices';
 
 export const useCharacters = (counterPage: number) => {
-  const [isLoader, setIsLoader] = useState<boolean>(true);
+  const [isLoaderCharacters, setIsLoaderCharacters] = useState<boolean>(true);
   const characters = useSelector((store: AppStore) => store.characters);
   const dispatch = useDispatch();
   useEffect(() => {
     const getCharacters = async () => {
-      const results = await getCharactersService(setIsLoader, counterPage);
+      const results = await getCharactersService(setIsLoaderCharacters, counterPage);
       dispatch(readCharacters(results.map((result) => charactersAdapter(result))));
     };
     getCharacters();
   }, [dispatch, counterPage]);
   return {
     characters,
-    isLoader,
+    isLoaderCharacters
   };
 };

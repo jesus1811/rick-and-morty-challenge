@@ -2,7 +2,7 @@
 
 rick and morty movie platform
 
-![Descripción de la imagen](/public/bannerReadme.png)
+![Descripción de la imagen](/public/readme.png)
 
 ## Getting Started 🚀
 

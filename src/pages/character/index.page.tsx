@@ -7,14 +7,13 @@ import { AppStore } from '@/redux/store';
 
 const Character = () => {
   const page = useSelector((store: AppStore) => store.page);
-  const { characters, isLoader } = useCharacters(page);
+  const { characters, isLoaderCharacters } = useCharacters(page);
   return (
     <Layout title="Rickvana | Characters" description="Plataforma de rick and morty para ver la serie e informarse">
       <Title primary>Characters</Title>
       <Pagination />
-      {isLoader ? (
-        <Loading />
-      ) : (
+      {isLoaderCharacters && <Loading />}
+      {!isLoaderCharacters && (
         <div className={styles.characterCards}>
           {characters.map(character => (
             <CharacterCard key={character.id} character={character} page={page} />
